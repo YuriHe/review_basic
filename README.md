@@ -1,9 +1,4 @@
 # Algo
-### Progress in Repo
-1
-
-### Progress in all(include code not in github)
-1
-
-### PENDING
-2353. Design a Food Rating System(heap related, review heap first)
+### Heap(Priority Queue)
+1464. Maximum Product of Two Elements in an Array
+2335. Minimum Amount of Time to Fill Cups, 2558. Take Gifts From the Richest Pile
