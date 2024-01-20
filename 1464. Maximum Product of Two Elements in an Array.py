@@ -1,23 +1,32 @@
-from heapq import nlargest
-class Solution:
-    '''
-    QUESTION: return one largest value from (num[i]-1)*(num[j]-1), i and j are diff index, all nums are positive
-    '''
-    # SOLUTION1: heap behavior
-    # TIME: O(n) TIME: O(1)
-    def maxProduct(self, nums: List[int]) -> int:
-        return prod(x - 1 for x in nlargest(2, nums))
+"""
+    Question:Find two largest elements
+    Topic:Max heap, sort -> find two largest
+    Solution1: heap T:O(n) S:O(n)
+    Solution2: compare T:O(n) S:O(1)
+"""
+import heapq
 
-    # SOLUTION2: search firstlargest and secondlargest
-    # TIME: O(n) TIME: O(1)
-    def maxProduct(self, nums: List[int]) -> int:
-        firstlargest, secondlargest = -1, -1
-        for n in nums:
-            if n > secondlargest:
-                secondlargest = n
-            if secondlargest > firstlargest:
-                temp = firstlargest
-                firstlargest = secondlargest
-                secondlargest = temp
-        return (firstlargest -1) * (secondlargest-1)
-        
+def maxProduct(self, nums: List[int]) -> int:
+    # # Solution1: Maxheap(default is minheap)
+    # 1.create negate list O(n)
+    ls = [-n for n in nums]
+    # 2.heapify O(n)
+    heapq.heapify(ls)
+    # 3.heappop operation O(logn)
+    first_l = heapq.heappop(ls)
+    second_l = heapq.heappop(ls)
+    return (abs(first_l)-1) * (abs(second_l)-1)
+
+    # Solution2: compare
+    # 1.declare first second to -1 since all >= 1
+    # 2.compare second first then larger first
+    first_l, second_l = -1, -1
+    for n in nums:
+        if n > second_l:
+            second_l = n
+        if second_l > first_l:
+            # switch
+            temp = first_l
+            first_l = second_l
+            second_l = temp
+    return (first_l-1) * (second_l-1)
