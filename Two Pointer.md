@@ -7,3 +7,6 @@
 
 ### Linked list
 203. Remove Linked List Elements
+
+### Merge sort
+88. Merge Sorted Array
