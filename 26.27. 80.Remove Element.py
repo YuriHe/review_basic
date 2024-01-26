@@ -28,4 +28,25 @@ def removeDuplicates(self, nums: List[int]) -> int:
     return slow
 
 
+
+"""
+    80.
+    Question: Return length of sorted array which val appear at most twice
+    Remove duplicates in-place think two pointer
+"""
+def removeDuplicates(self, nums: List[int]) -> int:
+    slow = 1 # counted once
+    count = 1 # count first val
+    for i in range(1, len(nums)):
+        if count < 2 and nums[i] == nums[i-1]:
+            nums[slow] = nums[i]
+            slow += 1
+            count += 1
+        elif nums[i] != nums[i-1]:
+            nums[slow] = nums[i]
+            slow += 1
+            count = 1
+        else:
+            continue
+    return slow
     
