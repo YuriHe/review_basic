@@ -1,6 +1,5 @@
 26. Remove Duplicates from Sorted Array
 27. Remove Element
-28. Find the Index of the First Occurrence in a String
 59. Spiral Matrix II
 80. Remove Duplicates from Sorted Array II
 121. Best Time to Buy and Sell Stock
@@ -14,3 +13,7 @@
 
 ### Merge sort
 88. Merge Sorted Array
+
+### String
+28. Find the Index of the First Occurrence in a String
+392. Is Subsequence
