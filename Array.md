@@ -4,3 +4,6 @@
 
 ### Sort
 56. Merge Intervals
+
+### Sliding Window
+2405. Optimal Partition of String
