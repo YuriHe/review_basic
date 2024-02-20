@@ -10,6 +10,9 @@
 ### Merge sort
 56. Merge Intervals
 
+### Lambda
+692. Top K Frequent Words(Lambda, )
+
 1464. Maximum Product of Two Elements in an Array
 2335. Minimum Amount of Time to Fill Cups
 2558. Take Gifts From the Richest Pile
