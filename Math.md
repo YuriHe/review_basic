@@ -1,3 +1,4 @@
+9. Palindrome Number
 202. Happy Number
 263. Ugly Number(...)
 1291. Sequential Digits
