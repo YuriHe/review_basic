@@ -9,6 +9,7 @@
 
 ### Merge sort
 56. Merge Intervals
+1768. Merge Strings Alternately(PENDING)
 
 ### Lambda
 692. Top K Frequent Words(Lambda, )
