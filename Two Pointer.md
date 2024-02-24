@@ -14,7 +14,3 @@
 ### Merge sort
 88. Merge Sorted Array
 
-### String
-28. Find the Index of the First Occurrence in a String
-392. Is Subsequence
-2108. Find First Palindromic String in the Array(EASY)
