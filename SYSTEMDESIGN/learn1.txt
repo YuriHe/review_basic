@@ -1,0 +1,28 @@
+large scale distribute system
+
+large scale:
+intensive compute data 
+lots of customer are using
+update frequently 
+performance expectation
+
+distribute system:
+multiple server 
+
+design pattern
+it is particular process/pattern. and find reusable solution
+convert business requirement to technical solutions
+design abstract, concret class module
+
+POC
+Proof of Concept (PoC) is a complete process for software concept verification. In the context of software development services, it’s essentially a small-scale exercise to verify that certain aspects of the software can be developed and will function as intended. 
+
+Basic steps
+1.Requirements, PM provide doc, set priority/trade off
+2.design, API&querying, server(code), database(schema), protocal request/response, firewall 
+3.fault tolerance
+4.Extensibility
+5.Testing(corner cases)
+
+Reference:
+1.https://www.youtube.com/watch?v=m8Icp_Cid5o
