@@ -9,6 +9,7 @@ class Solution:
     Question: check if linkedlist list cycle
     Topic: fast-slow pointer
     when fast come to meet slow
+    eg. 5 unit in loop, 1&2,2&4,3&6,4&8,5&10,  10 is 2times of 5. and meet at [0]
     """
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         if head is None: return False
