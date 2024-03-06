@@ -12,3 +12,6 @@
 create dp list, size (+1 or not)
 base dp case dp[0] dp[1]
 return dp[-1]
+
+### When
+Ask how many ways/combination, need do recursion or iterate list
