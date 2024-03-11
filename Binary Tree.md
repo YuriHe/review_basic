@@ -1,3 +1,6 @@
+### BST
+938. Range Sum of BST
+
 100. Same Tree(EASY)
 104. Maximum Depth of Binary Tree
 108. Convert Sorted Array to Binary Search Tree
