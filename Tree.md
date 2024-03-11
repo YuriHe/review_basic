@@ -8,12 +8,14 @@ left.val<=cur.val<=right.val
 
 ### BT
 100. Same Tree
-
-
-
+101. Symmetric Tree
 104. Maximum Depth of Binary Tree
-108. Convert Sorted Array to Binary Search Tree
 110. Balanced Binary Tree
+
+
+
+108. Convert Sorted Array to Binary Search Tree
+
 112. Path Sum
 257. Binary Tree Paths
 
@@ -27,9 +29,11 @@ DFS
 BFS
 
 ### Feature
-height-balanced
+#### height-balanced
+A height-balanced binary tree is defined as a binary tree in which the height of the left and the right subtree of any node differ by not more than 1. AVL tree, red-black tree are examples of height-balanced trees.
 
-### Solution1: Recursion
-#### Template
+
+### SOLUTION
+#### Solution1: Recursion
 base case: if not root: return ..
 rec base: return self.func(xx.left)
