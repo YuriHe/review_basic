@@ -6,6 +6,7 @@
 ### 1D
 128. Longest Consecutive Sequence
 442. Find All Duplicates in an Array
+448. Find All Numbers Disappeared in an Array
 
 ### 2D 
 48. Rotate Image
