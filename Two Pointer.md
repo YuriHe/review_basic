@@ -4,6 +4,7 @@
 59. Spiral Matrix II
 80. Remove Duplicates from Sorted Array II
 121. Best Time to Buy and Sell Stock
+792. Number of Matching Subsequences
 1351. Count Negative Numbers in a Sorted Matrix
 
 ### Sliding Window
