@@ -12,3 +12,6 @@
 ### Sliding Window
 3. Longest Substring Without Repeating Characters
 2405. Optimal Partition of String
+
+### Handle String
+1324. Print Words Vertically
