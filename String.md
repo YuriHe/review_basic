@@ -8,10 +8,5 @@
 392. Is Subsequence
 2108. Find First Palindromic String in the Array(EASY)
 
-
-### Sliding Window
-3. Longest Substring Without Repeating Characters
-2405. Optimal Partition of String
-
 ### Handle String
 1324. Print Words Vertically
