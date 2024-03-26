@@ -15,14 +15,15 @@ left.val<=cur.val<=right.val
 #### BFS(deque)
 102. Binary Tree Level Order Traversal
 111. Minimum Depth of Binary Tree
-
+#### Recursion
+112. Path Sum
 
 
 
 
 108. Convert Sorted Array to Binary Search Tree
 
-112. Path Sum
+
 257. Binary Tree Paths
 
 
