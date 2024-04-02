@@ -1,10 +1,11 @@
 ### Heap sort
-#### Min Heap
+#### Min Heap(Default)
 215. Kth Largest Element in an Array
 
 #### Max Heap
 451. Sort Characters By Frequency
 506. Relative Ranks
+973. K Closest Points to Origin
 
 
 ### Merge sort
