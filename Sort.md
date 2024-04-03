@@ -7,6 +7,7 @@
 451. Sort Characters By Frequency
 506. Relative Ranks
 973. K Closest Points to Origin
+1046. Last Stone Weight
 
 ### Merge sort
 56. Merge Intervals
