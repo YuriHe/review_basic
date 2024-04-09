@@ -8,6 +8,7 @@
 442. Find All Duplicates in an Array
 448. Find All Numbers Disappeared in an Array
 581. Shortest Unsorted Continuous Subarray
+771. Jewels and Stones
 
 ### 2D 
 48. Rotate Image
