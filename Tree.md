@@ -1,8 +1,3 @@
-
-
-#### List
-938. Range Sum of BST
-
 ### BT
 #### DFS
 100. Same Tree
@@ -13,6 +8,7 @@
 102. Binary Tree Level Order Traversal
 111. Minimum Depth of Binary Tree
 129. Sum Root to Leaf Numbers
+938. Range Sum of BST
 #### Recursion
 108. Convert Sorted Array to Binary Search Tree
 112. Path Sum
