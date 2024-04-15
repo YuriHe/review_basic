@@ -10,4 +10,5 @@
 
 ### Handle String
 806.Number of Lines To Write String
+824.Goat Latin
 1324.Print Words Vertically
