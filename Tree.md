@@ -1,7 +1,4 @@
-### BST
-#### Concept
-at most two childs
-left.val<=cur.val<=right.val
+
 
 #### List
 938. Range Sum of BST
@@ -17,12 +14,10 @@ left.val<=cur.val<=right.val
 111. Minimum Depth of Binary Tree
 129. Sum Root to Leaf Numbers
 #### Recursion
+108. Convert Sorted Array to Binary Search Tree
 112. Path Sum
 
 
-
-
-108. Convert Sorted Array to Binary Search Tree
 
 
 257. Binary Tree Paths
@@ -38,10 +33,16 @@ BFS
 
 ### Feature
 #### height-balanced
-A height-balanced binary tree is defined as a binary tree in which the height of the left and the right subtree of any node differ by not more than 1. AVL tree, red-black tree are examples of height-balanced trees.
+A height-balanced binary tree is defined as a binary tree in which the height of the left and the right subtree of any node differ by not more than 1. AVL tree, red-black tree are examples of height-balanced trees. 
+
+#### BST
+##### Concept
+at most two childs
+left.val<=cur.val<=right.val
 
 
 ### SOLUTION
 #### Solution1: Recursion
 base case: if not root: return ..
 rec base: return self.func(xx.left)
+if build tree: return node
