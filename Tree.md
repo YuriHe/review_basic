@@ -1,27 +1,24 @@
 ### BT
 #### DFS
+100.Same Tree
+101.Symmetric Tree
+104.Maximum Depth of Binary Tree
+110.Balanced Binary Tree
+257.Binary Tree Paths
 
-100. Same Tree
-101. Symmetric Tree
-104. Maximum Depth of Binary Tree
-110. Balanced Binary Tree
 
 #### BFS(deque)
-
-102. Binary Tree Level Order Traversal
-111. Minimum Depth of Binary Tree
-129. Sum Root to Leaf Numbers
-938. Range Sum of BST
+102.Binary Tree Level Order Traversal
+111.Minimum Depth of Binary Tree
+129.Sum Root to Leaf Numbers
+938.Range Sum of BST
 
 #### Recursion
-
-108. Convert Sorted Array to Binary Search Tree
-112. Path Sum
-xxxx
+108.Convert Sorted Array to Binary Search Tree
+112.Path Sum
 
 
 
-257. Binary Tree Paths
 
 
 

@@ -16,13 +16,14 @@ class Solution:
         self.dfs(root, "", res)
         return res
     
-    def dfs(self, root, path, res):
-        path += str(root.val)
-        # base case: leaf
-        if not root.left and not root.right:
-            res.append(path)
+    def dfs(self, root, tmp, res):
+        if not root:
             return
+        tmp += str(root.val)
+        if not root.left and not root.right:
+            # it is leaf
+            res.append(tmp)
         if root.left:
-            self.dfs(root.left, path+"->", res)
+            self.dfs(root.left, tmp+"->", res)
         if root.right:
-            self.dfs(root.right, path+"->", res)
+            self.dfs(root.right, tmp+"->", res)
