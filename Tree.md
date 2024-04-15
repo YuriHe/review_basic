@@ -6,7 +6,6 @@
 110.Balanced Binary Tree
 257.Binary Tree Paths
 
-
 #### BFS(deque)
 102.Binary Tree Level Order Traversal
 111.Minimum Depth of Binary Tree
@@ -16,11 +15,6 @@
 #### Recursion
 108.Convert Sorted Array to Binary Search Tree
 112.Path Sum
-
-
-
-
-
 
 ### Traversal
 inorder
@@ -37,7 +31,6 @@ A height-balanced binary tree is defined as a binary tree in which the height of
 ##### Concept
 at most two childs
 left.val<=cur.val<=right.val
-
 
 ### SOLUTION
 #### Solution1: Recursion
