@@ -1,12 +1,16 @@
 ### Two pointer
-28.Find the Index of the First Occurrence in a String
-125.Valid Palindrome
-242.Valid Anagram
-290.Word Pattern
-345.Reverse Vowels of a String
-392.Is Subsequence
-443.String Compression
-2108.Find First Palindromic String in the Array(EASY)
+1. 28.Find the Index of the First Occurrence in a String
+2. 125.Valid Palindrome
+3. 242.Valid Anagram
+4. 290.Word Pattern
+5. 345.Reverse Vowels of a String
+6. 392.Is Subsequence
+7. 443.String Compression
+8. 2108.Find First Palindromic String in the Array(EASY)
+
+### Hashmap/Set
+1. 49.Group Anagrams
+2. 1657.Determine if Two Strings Are Close
 
 ### Handle String
 1. 806.Number of Lines To Write String
