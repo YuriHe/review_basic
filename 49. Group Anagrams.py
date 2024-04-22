@@ -1,6 +1,7 @@
 """
     Question: List of List which group anagrams
     Topic: {sortedword: [group items]}, return [[group items]]
+    No need to set flag
 """
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
     if strs == [""]: return [[""]]
