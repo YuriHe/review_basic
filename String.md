@@ -9,6 +9,7 @@
 2108.Find First Palindromic String in the Array(EASY)
 
 ### Handle String
-806.Number of Lines To Write String
-824.Goat Latin
-1324.Print Words Vertically
+1. 806.Number of Lines To Write String
+2. 824.Goat Latin
+3. 1324.Print Words Vertically
+4. 830.Positions of Large Groups
