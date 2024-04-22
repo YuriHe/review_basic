@@ -13,3 +13,4 @@
 2. 824.Goat Latin
 3. 1324.Print Words Vertically
 4. 830.Positions of Large Groups
+6. 1935.Maximum Number of Words You Can Type
