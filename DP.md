@@ -7,6 +7,10 @@
 198. House Robber
 746. Min Cost Climbing Stairs
 
+### DP 2D
+#### bottom-top
+62. Unique Paths
+
 
 ### Template
 create dp list, size (+1 or not)
