@@ -4,30 +4,26 @@
     Topic: Two pointer
 """
 def removeElement(self, nums: List[int], val: int) -> int:
-    slow, fast = 0, 0 # slow: track != val and return it, fast keep whole list
-    while fast < len(nums):
-        if nums[fast] != val:
-            nums[slow] = nums[fast]
-            slow += 1
-        fast += 1
-    return slow
+    k = 0
+    for i in range(len(nums)):
+        if nums[i] != val:
+            nums[k] = nums[i]
+            k += 1
+    return k
     
 """
     27.
     Question: Remove in-place many duplicates in sorted array 
-    Topic: two pointer, slow track!dup
+    Topic: two pointer, k track final array
     i Compare to i-1 to determine if dup
 """
 def removeDuplicates(self, nums: List[int]) -> int:
-    slow = 1
+    k = 0
     for i in range(1, len(nums)):
-        if nums[i] != nums[i-1]:
-            # cur diff as prev, not dup
-            nums[slow] = nums[i]
-            slow += 1
-    return slow
-
-
+        if nums[i] != nums[k]:
+            k += 1
+            nums[k] = nums[i]
+    return k+1 if len(nums) > 0 else 0
 
 """
     80.
@@ -35,18 +31,23 @@ def removeDuplicates(self, nums: List[int]) -> int:
     Remove duplicates in-place think two pointer
 """
 def removeDuplicates(self, nums: List[int]) -> int:
-    slow = 1 # counted once
-    count = 1 # count first val
-    for i in range(1, len(nums)):
-        if count < 2 and nums[i] == nums[i-1]:
-            nums[slow] = nums[i]
-            slow += 1
-            count += 1
-        elif nums[i] != nums[i-1]:
-            nums[slow] = nums[i]
-            slow += 1
-            count = 1
-        else:
-            continue
-    return slow
-    
+        # compare duplicate, start from index1
+        # use count variable to count occurance of elements
+        count = 1
+        # use k track final array
+        k = 0
+        for i in range(1, len(nums)):
+            if nums[i] != nums[k]:
+                # replace and reset count
+                k += 1
+                nums[k] = nums[i]
+                count = 1
+            else:
+                if count < 2:
+                    k += 1
+                    nums[k] = nums[i]
+                    count += 1
+                else:
+                    continue
+                
+        return k+1 if len(nums) > 0 else 0
