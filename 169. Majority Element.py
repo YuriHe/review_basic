@@ -19,6 +19,17 @@ def majorityElement(self, nums: List[int]) -> int:
         if maxi_k_v[0] is None or v > maxi_k_v[1]:
             maxi_k_v = [k, v] # update k, v 
     return maxi_k_v[0]
+    # Solution2.2
+    from collections import Counter
+    count_dict = Counter(nums)
+        ele = [None, 0]
+
+        for c, ct in count_dict.items():
+            if ele[0] is None or ct >= ele[1]:
+                # update ele dict
+                ele = [c,ct]
+        
+        return ele[0]
     # Solution3: 
     candidate = 0
     count = 0

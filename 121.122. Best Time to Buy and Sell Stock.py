@@ -1,18 +1,11 @@
-"""
+""" 
+121. Best Time to Buy and Sell Stock
     Question: find max diff from two different index (buy < sell)
-    Solution1: brute force T:O(n^2) TIMOUT!!
-    Solution2(BEST): native way T:O(n) S: O(1)
-    Solution3: DP (find max/min and keep do recursion)T:O(n), S:O(n)
+    Solution1(BEST): native way T:O(n) S: O(1)
+    Solution2: DP (find max/min and keep do recursion)T:O(n), S:O(n)
 """
 def maxProfit(self, prices: List[int]) -> int:
-    # Solution1: fail
-    if len(prices) <= 1: return 0
-    res = 0
-    for i in range(len(prices)-1):
-        for j in range(i+1, len(prices)):
-            res = max(res, prices[j] - prices[i])
-    return res
-    # Solution2:
+    # Solution1:
     if len(prices) <= 1: return 0
     res = 0
     buy = prices[0]
@@ -23,7 +16,7 @@ def maxProfit(self, prices: List[int]) -> int:
             # find lower price
             buy = prices[i]
     return res
-    # Solution3: 
+    # Solution2: 
     # create new arr for store profit at that point
     if len(prices) <= 1: return 0
     dp = [0] * len(prices)
@@ -38,3 +31,18 @@ def maxProfit(self, prices: List[int]) -> int:
             buy = prices[i]
         res= max(res, dp[i])
     return res
+
+
+"""
+    122. Best Time to Buy and Sell Stock II
+    Question: accumulate profits from multiple transactions, sell index >= buy index
+"""
+def maxProfit(self, prices: List[int]) -> int:
+    profit  = 0
+    buy = prices[0]
+    for i in range(1, len(prices)):
+        if prices[i] > buy:
+            profit += (prices[i] - buy)
+        buy = prices[i]
+    return profit
+

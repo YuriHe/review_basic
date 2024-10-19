@@ -1,4 +1,6 @@
 ### Greedy
+45. Jump Game II
+55. Jump Game
 605. Can Place Flowers
 
 ### Sliding Window
