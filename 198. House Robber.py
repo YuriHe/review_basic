@@ -3,14 +3,16 @@
     Topic: DP 1D
 """
 def rob(self, nums: List[int]) -> int:
-    # create dp list
+    # create dp array
     dp = [0] * len(nums)
-    dp[0] = nums[0]
+    # base case
     if len(nums) == 1:
-        return dp[0]
-    dp[1] = max(nums[0], nums[1])
-
+        return nums[0]
+    if len(nums) == 2:
+        return max(nums[0], nums[1])
+    dp[0], dp[1] = nums[0], max(nums[0], nums[1])
+    # dp func
     for i in range(2, len(dp)):
-        # compare cur+i-2 or i-1
-        dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+        # find max accumulated money for cur 
+        dp[i] = max(dp[i-1], dp[i-2]+nums[i])
     return dp[-1]
