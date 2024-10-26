@@ -8,7 +8,7 @@
 7. 443.String Compression
 8. 2108.Find First Palindromic String in the Array(EASY)
 
-### Hashmap/Set
+### Hashmap/Set/charArr
 1. 49.Group Anagrams
 2. 1657.Determine if Two Strings Are Close
 
