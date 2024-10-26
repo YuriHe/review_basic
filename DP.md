@@ -6,11 +6,14 @@ return dp[-1]
 ### When use DP
 Ask accumulated wayss for combination
 Ask max/min accumulated profit for many combinations(ways, add)
+Ask if can get result from combination
 
 ### DP 1D
 70. Climbing Stairs
 198. House Robber
 ### DP 1D Bottom-Up (think reversly from top down(dfs backtracking))
+139. Word Break
+300. Longest Increasing Subsequence
 322. Coin Change
 
 
