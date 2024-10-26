@@ -1,15 +1,12 @@
-"""
-    Question: List of List which group anagrams
-    Topic: {sortedword: [group items]}, return [[group items]]
-    No need to set flag
-"""
-def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-    if strs == [""]: return [[""]]
-    dic = {}
+def groupAnagrams(strs):
+    # use hash key: list of value {anagram: [s1, s2, s3]}]
+    res = {}
     for s in strs:
-        # convert string to array, then sort, then convert back to string
-        key = "".join(sorted(list(s)))
-        if key not in dic:
-            dic[key] = []
-        dic[key].append(s)
-    return dic.values()
+        k = "".join(sorted(s))
+        if k not in res:
+            res[k] = []
+        res[k].append(s)
+
+    return list(res.values()) # must convert dict_value object to list
+
+print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
