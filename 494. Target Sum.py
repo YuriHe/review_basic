@@ -1,33 +1,46 @@
 class Solution:
     """
-    Question: Do +/- operations to meet target
-    Topic: total ways/combination/recursion/DP/top-down
-    # Solution1: Memorization DP, top-down recursion
+    Question: use each integer(+ or - before it) in nums list and concatenate all the integers
+    There is two options: +, - and finally got target
+    Top-down recursion
     """
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
-        index = len(nums) - 1
-        curr_sum = 0
-        self.memo = {}
-        return self.dp(nums, index, target, curr_sum)
-    
-    def dp(self, nums, index, target, curr_sum):
-        # avoid overhead
-        if (index, curr_sum) in self.memo:
-            return self.memo[(index, curr_sum)]
+        # SOLUTION1 use cache  T: n^2
+        @cache
+        def rec(index, remaining):
+            # base case 
+            if index == len(nums):
+                return 1 if remaining == 0 else 0
+            # choose addition
+            add = rec(index+1, remaining-nums[index])
+            # choose subtraction
+            sub = rec(index+1, remaining+nums[index])
+            return add + sub
 
-        # base case
-        if index < 0 and curr_sum == target:
-            # find one way for target sum
-            return 1
-        if index < 0:
-            # not found
-            return 0
+        return rec(0, target)
 
-        # decisions
-        positive = self.dp(nums, index-1, target, curr_sum+nums[index])
-        negative = self.dp(nums, index-1, target, curr_sum-nums[index])
+        # SOLUTION2 use memorization, maximum depth of recurision stack is O(n), T:O(n*S) with memorization. S is the sum of all numbers in nums (the maximum possible range of remaining). 
+        # use (index, remaining) is memo's key because that is unique when handle addition/substraction
+        memo = {}
+        def rec(index, remaining):
+            # base case
+            if index == len(nums):
+                return 1 if remaining == 0 else 0
+            # check memo
+            if (index, remaining) in memo:
+                return memo[(index, remaining)] # pull out result from memo, memo[(index, remaining)] = ways of combination so far
+            # addition
+            add = rec(index+1, remaining - nums[index])
+            # subtraction
+            sub = rec(index+1, remaining + nums[index])
+            # store to memo
+            memo[(index, remaining)] = add+sub
+            return add + sub
+
+        return rec(0, target)
+
+
+
+
+
         
-        # store to memorization dict 
-        # key is tuple(index, cursum)
-        self.memo[(index, curr_sum)] = positive+negative
-        return self.memo[(index, curr_sum)]

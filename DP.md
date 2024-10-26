@@ -1,7 +1,13 @@
 ### Template
+Pseducode
 create dp list, size (+1 or not)
 base dp case dp[0] dp[1]
 return dp[-1]
+
+Think:
+Goal: max/min/ways of combinations
+Choice: 1step/2step, +/-, true/false
+Rule: how to handle dp[i]
 
 ### When use DP
 Ask accumulated wayss for combination
@@ -15,12 +21,12 @@ Ask if can get result from combination
 139. Word Break
 300. Longest Increasing Subsequence
 322. Coin Change
-
-
-
-
 ### DP top-down memorization/recursion
 494. Target Sum
+
+
+
+
 746. Min Cost Climbing Stairs
 
 ### DP 2D
