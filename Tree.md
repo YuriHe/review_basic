@@ -16,6 +16,15 @@
 108.Convert Sorted Array to Binary Search Tree
 112.Path Sum
 
+### Prefix tree
+208. Implement Trie (Prefix Tree)
+1233. Remove Sub-Folders from the Filesystem
+
+
+
+
+
+
 ### Traversal
 inorder
 preorder
