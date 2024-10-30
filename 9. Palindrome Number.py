@@ -2,13 +2,19 @@
     Question: use Math way to check integer is palindrome
 """
 def isPalindrome(self, x: int) -> bool:
+    # SOLUTION1 Convert type
+    if x < 0:
+            # negative num
+            return False
+        return str(x)[::-1] == str(x)
+
+    # SOLUTION2 handle integer
     if x < 0: return False
-    # copy x, keep x
+    # delare copy for compare if 'res' same as x in following steps
     copy = x
     res = 0
-    while copy > 0: 
-        # template iterate each digit
+    # iterate digits in x
+    while copy > 0:
         res = res * 10 + copy % 10
         copy //= 10
-    return x == res
-    
+    return res == x

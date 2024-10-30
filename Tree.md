@@ -1,3 +1,14 @@
+### DFS
+112.Path Sum
+
+
+
+
+
+
+
+
+
 ### BT
 #### DFS
 100.Same Tree
@@ -14,16 +25,11 @@
 
 #### Recursion
 108.Convert Sorted Array to Binary Search Tree
-112.Path Sum
+
 
 ### Prefix tree
 208. Implement Trie (Prefix Tree)
 1233. Remove Sub-Folders from the Filesystem
-
-
-
-
-
 
 ### Traversal
 inorder
