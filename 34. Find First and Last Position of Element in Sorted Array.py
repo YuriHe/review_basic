@@ -1,27 +1,24 @@
 """
     Question:search target which may duplicate in sorted list
-    Topic:binary search
-    Issue: ifinite loop-> check variable name is correct
+    Topic:binary search O(logn)
 """
 def searchRange(self, nums: List[int], target: int) -> List[int]:
-        start, end = 0, len(nums)-1
-        while start <= end:
-            mid = (start+end) // 2
+        l, r = 0, len(nums)-1
+        # nums=[3] target=3, [0,0] so <=
+        while l <= r:
+            mid = (l + r) //2
             if nums[mid] == target:
-                # restore mid index to start/end
-                # do -1/+1 can check 1num and prepare while loop
-                if mid-1 >= 0: 
-                    start = mid-1
-                if mid+1 < len(nums):
-                    end = mid+1
-                # found part of substring we need and spread two sides
-                while start >= 0 and nums[start] == target:
-                    start -= 1
-                while end < len(nums) and nums[end] == target:
-                    end += 1
-                return [start+1, end-1]
-            elif nums[mid] < target:
-                start = mid + 1
+                # find target, expand to left and right
+                l = mid - 1
+                r = mid + 1
+                while l >= 0 and nums[l] == target:
+                    l -= 1
+                while r < len(nums) and nums[r] == target:
+                    r += 1
+
+                return [l+1, r-1]
+            elif nums[mid] > target:
+                r = mid - 1
             else:
-                end = mid - 1
-        return [-1,-1]
+                l = mid + 1
+        return [-1, -1]

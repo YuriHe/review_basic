@@ -1,3 +1,16 @@
+### Binary Search
+See if O(logn) + sorted array -> Think binary search
+If both mid+1 and mid-1, while left <= right; otherwise, left < right
+
+34. Find First and Last Position of Element in Sorted Array
+35. Search Insert Position
+162. Find Peak Element
+278. First Bad Version
+704. Binary Search
+
+
+
+
 ### Modify in-place with (1) extra memory
 26. Remove Duplicates from Sorted Array
 27. Remove Element

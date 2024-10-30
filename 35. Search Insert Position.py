@@ -11,6 +11,7 @@ def searchInsert(self, nums: List[int], target: int) -> int:
         mid = (low + high) // 2
         if nums[mid] == target: return mid
         elif nums[mid] < target:
+            # insert index on right of mid(no include mid)
             low = mid + 1
         else:
             high = mid - 1
