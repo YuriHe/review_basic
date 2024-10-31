@@ -14,9 +14,10 @@ class Solution:
             if flag[1] < cur_start: 
                 # no overlap
                 res.append(flag)
+                # update flag
                 flag = intervals[i]
             else:
-                # overlap
+                # overlap & update flag
                 flag = [min(flag[0],cur_start),max(flag[1], cur_end)]
         # last one
         res.append(flag)

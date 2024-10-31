@@ -1,20 +1,27 @@
-"""
-    Question: minimum length of subarray the sum >= target
-    Topic: Sliding Window T:O(n) S:1
-    Subarray is consecutive array 
-    Solution1: use two pointer to control window
-"""
-def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-    size = len(nums)+1 # find minimum len, so set >maximum 
-    i, j = 0,0
-    subsum = 0
-    while j < len(nums):
-        # add cur to subsum & update subsum 
-        subsum += nums[j]
-        # handle left and shrink subsum
-        while i <= j and subsum >= target:
-            size = min(size, j-i+1)
-            subsum -= nums[i]
-            i += 1
-        j += 1
-    return 0 if size == len(nums)+1 else size
+class Solution:
+    """
+    Question: return minimum leng of consecutive sub array which sum >= target
+    Cannot sort -> sliding window O(n)
+    """
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        size = len(nums) + 1 # find minimum length, set impossible v
+        subsum = 0
+        l, r = 0, 0 # dynamically re-size window
+        while r < len(nums):
+            subsum += nums[r]
+            while l <= r and subsum >= target:
+                # meet req
+                size = min(size, r-l+1)
+                # remove [left] from subsum
+                subsum -= nums[l]
+                # move on left pointer
+                l += 1
+            # move on right pointer
+            r += 1
+        return size if size != len(nums)+1 else 0
+
+
+
+
+        
+            

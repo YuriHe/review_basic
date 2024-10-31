@@ -9,6 +9,22 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 704. Binary Search
 
 
+### Sort+Binary search
+15. 3Sum
+
+
+### Sliding Window
+3. Longest Substring Without Repeating Characters
+209. Minimum Size Subarray Sum
+2405. Optimal Partition of String
+
+
+### Greedy
+45. Jump Game II
+55. Jump Game
+605. Can Place Flowers
+
+
 
 
 ### Modify in-place with (1) extra memory
@@ -16,9 +32,6 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 27. Remove Element
 80. Remove Duplicates from Sorted Array II
 189. Rotate Array
-
-### Sliding Window
-209. Minimum Size Subarray Sum
 
 ### Linked list
 141. Linked List Cycle
