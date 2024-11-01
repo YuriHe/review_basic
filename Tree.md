@@ -31,6 +31,7 @@
 208. Implement Trie (Prefix Tree)
 1233. Remove Sub-Folders from the Filesystem
 
+
 ### Traversal
 inorder
 preorder
@@ -38,14 +39,17 @@ postorder
 DFS 
 BFS
 
+
 ### Feature
 #### height-balanced
 A height-balanced binary tree is defined as a binary tree in which the height of the left and the right subtree of any node differ by not more than 1. AVL tree, red-black tree are examples of height-balanced trees. 
+
 
 #### BST
 ##### Concept
 at most two childs
 left.val<=cur.val<=right.val
+
 
 ### SOLUTION
 #### Solution1: Recursion

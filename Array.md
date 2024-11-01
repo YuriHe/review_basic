@@ -1,3 +1,10 @@
+### Prefix sum
+560. Subarray Sum Equals K
+
+
+
+
+
 169. Majority Element
 217. Contains Duplicate
 228. Summary Ranges

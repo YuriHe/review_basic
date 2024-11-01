@@ -19,14 +19,6 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 2405. Optimal Partition of String
 
 
-### Greedy
-45. Jump Game II
-55. Jump Game
-605. Can Place Flowers
-
-
-
-
 ### Modify in-place with (1) extra memory
 26. Remove Duplicates from Sorted Array
 27. Remove Element
@@ -40,10 +32,13 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 ### Merge sort
 88. Merge Sorted Array
 
-### Consider Index
+### Consider Index 
 11. Container With Most Water
 121. Best Time to Buy and Sell Stock
 122. Best Time to Buy and Sell Stock II
+
+
+
 
 
 

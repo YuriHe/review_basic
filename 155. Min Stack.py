@@ -1,8 +1,10 @@
 class MinStack:
-
+    """
+    Create two stack. self.ls store all nums, layer by layer. self.minstack store min for each layer based on self.ls
+    """
     def __init__(self):
         self.ls = []
-        # store mini, top is mini, second top is second mini, can be duplicate
+        # can be duplicate no need to switch, use replace with new smaller for new layer
         self.minstack = [] 
 
     def push(self, val: int) -> None:

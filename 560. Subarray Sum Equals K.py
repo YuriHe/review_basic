@@ -1,19 +1,20 @@
 class Solution:
     """
-    Question: Subarray Sum Equals K
-    TOPIC: prefix sum, STEP:DONT USE SLIDING WINDOW SINCE positive/negative
-    STEP: store (subtotal, appear_times) to map
+    Question: return total number of subarrays who sum = target
+    1.count all subarray sum = target => prefix sum, not sliding window
+    2.presum[i] = presum[j](in dict) + k, update dict[presum[i] - k] = occurance
     """
     def subarraySum(self, nums: List[int], k: int) -> int:
-        dic = dict()
-        # for check sub_total-k = 0 in map
-        dic[0] = 1
+        freq = dict()
+        # [k] k scene or [1,1,1] k=2, {1:1,2:1(2-k=0),3:1}
+        freq[0] = 1
+        presum = 0
         res = 0
-        sub_total = 0
+
         for n in nums:
-            sub_total += n
-            if sub_total - k in dic: # =0, or extra already visited
-                res += dic[sub_total-k]
-            dic[sub_total] = dic.get(sub_total, 0) + 1 # appears again, count 1
+            presum += n
+            if presum - k in freq:#accumulate res from previous subarrays which sum had k, end with n
+                res += freq[presum-k]
+            freq[presum] = freq.get(presum, 0) + 1
+
         return res
-            

@@ -1,3 +1,9 @@
+### Greedy
+45. Jump Game II
+55. Jump Game
+605. Can Place Flowers
+
+
 ### Template
 Pseducode
 create dp list, size (+1 or not)
@@ -9,10 +15,12 @@ Goal: max/min/ways of combinations
 Choice: 1step/2step, +/-, true/false
 Rule: how to handle dp[i]
 
+
 ### When use DP
 Ask accumulated wayss for combination
 Ask max/min accumulated profit for many combinations(ways, add)
 Ask if can get result from combination
+
 
 ### DP 1D
 70. Climbing Stairs
