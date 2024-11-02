@@ -6,9 +6,9 @@
 #         self.right = right
 class Solution:
     """
-    Question: combine digits from root to leave and sum up all branches
-    TOPIC: Iterate tree via BFS, accumulate to cur val, modify each node value
-    PATTERN: BFS->deque->no need level count, so not nested while
+    Question: combine digits from root to leaf and sum up all branches
+    SOLUTION1: Iterate tree via BFS, accumulate to cur val, modify each node value
+    PATTERN: BFS->deque->no need level count, so not nested while, each val will based on their latest ancestor -> DFS
     """
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         # collect res when they are leaves
@@ -29,4 +29,14 @@ class Solution:
         return res
     
 
-        
+    # SOLUTIN2: dfs
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        def dfs(node, cur_sum):
+            if not node:
+                return 0
+            cur = cur_sum * 10 + node.val
+            if not node.left and not node.right: # it is leaf
+                return cur
+            return dfs(node.left, cur) + dfs(node.right, cur)
+        return dfs(root, 0)
+            
