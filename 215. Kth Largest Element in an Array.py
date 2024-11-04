@@ -3,19 +3,38 @@
 #     Topic: Minheap(PQ)!(NOT MAX HEAP) use size k, smallest of k largest eles on top
 # """
 def findKthLargest(self, nums: List[int], k: int) -> int:
-    # SOLUTION1: minheap(default)
-    # build O(n) heapify(nlogn)
-    # create heap list 
+    """
+        SOLUTION1: Use Max heap(not default, invert value to simulate max-heap)
+        insert all elements and pop largest element k times to get result
+    """
+    # create list 
+    heap = [-num for num in nums]
+    # heapify the list, O(nlogn)
+    heapq.heapify(heap) 
+    # pop largest element k times to get result
+    while k > 0:
+        res = heapq.heappop(heap)
+        k-= 1
+    return -res
+
+    """
+        SOLUTION2: Use Minheap, 
+        keep size of heap limited to k elements. 
+        insert and handle size as well
+        pop smaller(pop root of heap)
+        root of heap always contains Kth largest element
+        return heap[0] which kth largest
+    """
     heap = []
-    # build heap with k size and heapify O(nlogn)
     for n in nums:
         heapq.heappush(heap, n)
         if len(heap) > k:
+            # pop
             heapq.heappop(heap)
     return heap[0]
-    
 
-# SOLUTION2: Quicksort-quickselect only recur kth largest
+
+# SOLUTION3: Quicksort-quickselect only recur kth largest
 # O(n), but worst O(n^2)
 # TLE
 import random
@@ -54,4 +73,8 @@ class Solution:
         return low
 
     
-        
+"""
+SOLUTION4: sort with lambda function PASS
+"""
+ls = sorted(nums, key=lambda x: x, reverse=True)
+return ls[k-1]

@@ -1,29 +1,29 @@
 class Solution:
-    """
-    Question: check number of islands, if four edges are 0
-    Topic: DFS
-    """
     def numIslands(self, grid: List[List[str]]) -> int:
         res = 0
-        # iterate 2d array
         for i in range(len(grid)):
             for j in range(len(grid[0])):
-                if grid[i][j] == "1":
-                    res += 1
-                    #find part of island
-                    # spread out 
+                if grid[i][j] == "1": # that is part of island, start dfs
                     self.dfs(grid, i, j)
+                    res += 1
         return res
 
-    def dfs(self, grid, i, j):
-        # base case
-        if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] != "1":
+    def dfs(self, grid, i, j) -> None:
+        if grid[i][j] != "1":
             return
-        # update current grid[i][j] as visited
-        grid[i][j] = "2"
-        self.dfs(grid, i+1, j)
-        self.dfs(grid, i-1, j)
-        self.dfs(grid, i, j+1)
-        self.dfs(grid, i, j-1)
-    
+        # visited
+        grid[i][j] = "0"
+
+        dir = [[1,0], [-1, 0], [0,1], [0, -1]]
+        for x, y in dir:
+            nx = i + x
+            ny = j + y
+            # explore all 4 direction and change all 1 to 0
+            if self.check_bound(grid, nx, ny):
+                self.dfs(grid, nx, ny)
+
         
+    def check_bound(self, grid, i, j):
+        if i >= 0 and j >= 0 and i < len(grid) and j < len(grid[0]):
+            return True
+        return False

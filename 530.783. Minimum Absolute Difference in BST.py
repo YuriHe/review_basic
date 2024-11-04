@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     """
+    530. Minimum Absolute Difference in BST
+    783. Minimum Distance Between BST Nodes
     Question: minimum absolute difference in BST -> asking minimum difference between two nodes which near each other
     BFS inorder will give sorted order
     Iterate tree by using inorder, after left children recursion, handle parent, update ancestor(prev), then right children recursion

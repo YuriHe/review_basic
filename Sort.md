@@ -4,13 +4,17 @@
 452. Minimum Number of Arrows to Burst Balloons
 
 
-
-
-
-
-### Heap sort
-#### Min Heap(Default)
+### Heap Sort
+Min-Heap: Smallest element at the root; parent nodes are smaller than their children.
+Max-Heap: Largest element at the root; parent nodes are larger than their children.
+#### Min-heap
 215. Kth Largest Element in an Array
+
+
+
+
+
+
 703. Kth Largest Element in a Stream
 
 #### Max Heap

@@ -18,6 +18,5 @@
 
 ### 2D 
 48. Rotate Image
-79. Word Search
 766. Toeplitz Matrix
 

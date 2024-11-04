@@ -10,7 +10,7 @@ def combine(self, n: int, k: int) -> List[List[int]]:
     cur = []
     def helper(index):
         if len(cur) == k: 
-            res.append(cur[:])
+            res.append(cur[:]) or cur.copy() # in recursion, need to return shadow copy
             return
         for i in range(index, n+1):  # start from index
             cur.append(i)

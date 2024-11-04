@@ -25,6 +25,7 @@ Ask if can get result from combination
 ### DP 1D
 70. Climbing Stairs
 198. House Robber
+746. Min Cost Climbing Stairs
 ### DP 1D Bottom-Up (think reversly from top down(dfs backtracking))
 139. Word Break
 300. Longest Increasing Subsequence
@@ -35,7 +36,7 @@ Ask if can get result from combination
 
 
 
-746. Min Cost Climbing Stairs
+
 
 ### DP 2D
 #### bottom-top

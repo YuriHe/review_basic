@@ -1,9 +1,19 @@
 ### Binary Search
+1D
 See if O(logn) + sorted array -> Think binary search
 If both mid+1 and mid-1, while left <= right; otherwise, left < right
+2D 
+sorted 2d array
+rows =3, columns = 4
+low = 0, high = m*n-1       eg.0, 3*4-1=11
+mid = (low+high) // 2       eg.5
+midrow = mid // columns     eg.1
+midcol = mid % columns.     eg.1
 
+33. Search in Rotated Sorted Array
 34. Find First and Last Position of Element in Sorted Array
 35. Search Insert Position
+74. Search a 2D Matrix
 162. Find Peak Element
 278. First Bad Version
 704. Binary Search
@@ -25,12 +35,11 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 80. Remove Duplicates from Sorted Array II
 189. Rotate Array
 
+
 ### Linked list
 141. Linked List Cycle
 203. Remove Linked List Elements
 
-### Merge sort
-88. Merge Sorted Array
 
 ### Consider Index 
 11. Container With Most Water
@@ -45,3 +54,7 @@ If both mid+1 and mid-1, while left <= right; otherwise, left < right
 59. Spiral Matrix II
 792. Number of Matching Subsequences
 1351. Count Negative Numbers in a Sorted Matrix
+
+
+### Merge sort
+88. Merge Sorted Array
