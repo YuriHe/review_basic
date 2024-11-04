@@ -5,6 +5,13 @@ while num> 0: num%10 is last_digit, num //=2
 202. Happy Number
 
 
+### Bit Manipulation
+67. Add Binary
+136. Single Number
+137. Single Number II
+190. Reverse Bits
+191. Number of 1 Bits
+
 
 
 263. Ugly Number(...)

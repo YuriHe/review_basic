@@ -7,24 +7,17 @@
 class Solution:
     """
     Question: find minimum depth of bt
-    ISSUE: NOT: 1 + min(self.minDepth(root.left), self.minDepth(root.right))
-    TOPIC: queue, if find it is leaf return right away
+    if skewed tree, all nodes are on one branch
+    cannot compeletely copy maximum depth of bt
+    minimum depth need to compare all paths to leaf
     """
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        # base case
-        if not root: return 0
-        q = collections.deque([root])
-        level = 1
-        while len(q) > 0:
-            size = len(q)
-            while size > 0:
-                first = q.popleft()
-                if not first.left and not first.right: # it is leaf
-                    return level 
-                if first.left:
-                    q.append(first.left)
-                if first.right:
-                    q.append(first.right)
-                size -= 1
-            level += 1
-        return level
+        if not root:
+            return 0
+        # If only one child is present, go down the path of the other child
+        if not root.left:
+            return self.minDepth(root.right) + 1
+        if not root.right:
+            return self.minDepth(root.left) + 1
+        # If both children are present, take the minimum depth of both subtrees
+        return min(self.minDepth(root.left), self.minDepth(root.right)) + 1

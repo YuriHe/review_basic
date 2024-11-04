@@ -1,10 +1,16 @@
-### Recursion
+### Recursion(DFS)
 Return is returning cur node situation
 100. Same Tree
 101. Symmetric Tree
+104. Maximum Depth of Binary Tree
+111. Minimum Depth of Binary Tree
 112. Path Sum
 222. Count Complete Tree Nodes
 
+
+### BFS
+637. Average of Levels in Binary Tree
+102. Binary Tree Level Order Traversal
 
 ### Swap Treenode
 226. Invert Binary Tree
@@ -18,11 +24,6 @@ Return is returning cur node situation
 
 ### Update Node
 129.Sum Root to Leaf Numbers
-
-
-### BFS
-637. Average of Levels in Binary Tree
-102. Binary Tree Level Order Traversal
 
 
 ### Irerate Tree
@@ -59,13 +60,13 @@ if build tree: return node
 
 ### BT
 #### DFS
-104.Maximum Depth of Binary Tree
+
 110.Balanced Binary Tree
 257.Binary Tree Paths
 
 #### BFS(deque)
 
-111.Minimum Depth of Binary Tree
+
 
 938.Range Sum of BST
 

@@ -14,6 +14,7 @@ midcol = mid % columns.     eg.1
 34. Find First and Last Position of Element in Sorted Array
 35. Search Insert Position
 74. Search a 2D Matrix
+153. Find Minimum in Rotated Sorted Array
 162. Find Peak Element
 278. First Bad Version
 704. Binary Search
