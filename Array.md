@@ -1,5 +1,18 @@
-### Prefix sum
+### Prefix & suffix
+238. Product of Array Except Self
 560. Subarray Sum Equals K
+
+
+### Handle Index value
+36. Valid Sudoku
+48. Rotate Image
+54. Spiral Matrix
+271. Encode and Decode Strings
+380. Insert Delete GetRandom O(1)
+
+
+### Common sense
+134. Gas Station
 
 
 
@@ -17,6 +30,6 @@
 771. Jewels and Stones
 
 ### 2D 
-48. Rotate Image
+
 766. Toeplitz Matrix
 

@@ -5,25 +5,20 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    """
-    Question: return all path from root to leaf
-    Topic: DFS recursion
-    """
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
-        if not root: return []
         res = []
-        # use recursion helper
-        self.dfs(root, "", res)
+
+        def rec(node, inner):
+            if not node:
+                return
+            if not node.left and not node.right: # it is leaf
+                inner += str(node.val)
+                res.append(inner)
+                return
+            # recursion
+            inner = inner + str(node.val) + "->"
+            rec(node.left, inner)
+            rec(node.right, inner)
+
+        rec(root, "")
         return res
-    
-    def dfs(self, root, tmp, res):
-        if not root:
-            return
-        tmp += str(root.val)
-        if not root.left and not root.right:
-            # it is leaf
-            res.append(tmp)
-        if root.left:
-            self.dfs(root.left, tmp+"->", res)
-        if root.right:
-            self.dfs(root.right, tmp+"->", res)

@@ -11,6 +11,9 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 215. Kth Largest Element in an Array
 
 
+### Array sort
+347. Top K Frequent Elements
+692. Top K Frequent Words
 
 
 
@@ -26,8 +29,6 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 ### Merge sort
 1768. Merge Strings Alternately(PENDING)
 
-### Lambda
-692. Top K Frequent Words(Lambda, )
 
 1464. Maximum Product of Two Elements in an Array
 2335. Minimum Amount of Time to Fill Cups

@@ -8,6 +8,7 @@ class Solution:
     """
     Question:  A binary tree is balanced if the heights of 
     its left and right subtrees differ by at most 1 for every node in the tree.
+    each node will be with max_height
     """
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if not root: return True
@@ -17,5 +18,6 @@ class Solution:
         return self.isBalanced(root.left) and self.isBalanced(root.right)
 
     def get_max_height(self, node) -> int:
+        # this helper is getting height starting from cur node to left
         if node is None: return 0
         return 1 + max(self.get_max_height(node.left), self.get_max_height(node.right))

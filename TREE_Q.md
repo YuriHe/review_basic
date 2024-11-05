@@ -3,14 +3,17 @@ Return is returning cur node situation
 100. Same Tree
 101. Symmetric Tree
 104. Maximum Depth of Binary Tree
+110. Balanced Binary Tree
 111. Minimum Depth of Binary Tree
 112. Path Sum
 222. Count Complete Tree Nodes
+257. Binary Tree Paths
 
 
 ### BFS
 637. Average of Levels in Binary Tree
 102. Binary Tree Level Order Traversal
+
 
 ### Swap Treenode
 226. Invert Binary Tree
@@ -32,6 +35,7 @@ inorder, preorder, postorder, bfs, dfs
 230. Kth Smallest Element in a BST
 530. Minimum Absolute Difference in BST 
 783. Minimum Distance Between BST Nodes
+938. Range Sum of BST
 
 
 ### Prefix tree(dictionary tree)
@@ -57,18 +61,6 @@ if build tree: return node
 
 
 
-
-### BT
-#### DFS
-
-110.Balanced Binary Tree
-257.Binary Tree Paths
-
-#### BFS(deque)
-
-
-
-938.Range Sum of BST
 
 
 

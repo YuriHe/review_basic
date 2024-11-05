@@ -9,22 +9,23 @@ class Solution:
     Question: sum up all val in [low, high]
     TOPIC: iterate BST 
     """
-    # SOLUTION1: RECURSION
+    # SOLUTION1: inorder traverse
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        res = [0] * 1
-        self.rec(root, low, high, res)
-        return res[0]
-    
-    def rec(self, node, low, high, res):
-        # base case
-        if node is None:
-            return 
-        if node.val <= high and node.val >= low:
-            res[0] += node.val
-        # do recursion
-        self.rec(node.left, low, high, res)
-        self.rec(node.right, low, high, res)
+        total = 0
 
+        def inorder(node):
+            nonlocal total
+            if not node: return
+            inorder(node.left)
+            if low<= node.val and node.val<=high:
+                total += node.val
+            inorder(node.right)
+
+        
+        inorder(root)
+        return total
+
+        
     # SOLUTION: BFS
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
         res = 0
