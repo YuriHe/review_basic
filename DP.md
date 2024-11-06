@@ -34,10 +34,6 @@ Ask if can get result from combination
 494. Target Sum
 
 
-
-
-
-
 ### DP 2D
-#### bottom-top
-1. 62.Unique Paths
+62. Unique Paths
+64. Minimum Path Sum

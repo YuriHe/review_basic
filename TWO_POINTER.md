@@ -38,8 +38,13 @@ midcol = mid % columns.     eg.1
 
 
 ### Linked list
+#### Create linkedlist
+21. Merge Two Sorted Lists
+#### Iterate linkedlist
 141. Linked List Cycle
+#### Edit linkedlist
 203. Remove Linked List Elements
+206. Reverse Linked List
 
 
 ### Consider Index 
@@ -55,7 +60,3 @@ midcol = mid % columns.     eg.1
 59. Spiral Matrix II
 792. Number of Matching Subsequences
 1351. Count Negative Numbers in a Sorted Matrix
-
-
-### Merge sort
-88. Merge Sorted Array
