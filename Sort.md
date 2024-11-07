@@ -20,6 +20,13 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 88. Merge Sorted Array
 
 
+### All sort 
+bubble sort: compare adjacent. best O(n) sorted, no swap, exit early; worst O(n^2), reverse sort
+quick sort: divide and conquer recursion. partition, pivot. best O(nlogn), worst O(n*2) when repeated 
+merge sort: divide and conquer recursion. T&S O(nlogn).
+912. Sort an Array
+
+
 
 
 

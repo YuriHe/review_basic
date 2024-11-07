@@ -7,12 +7,17 @@ Return is returning cur node situation
 111. Minimum Depth of Binary Tree
 112. Path Sum
 222. Count Complete Tree Nodes
+236. Lowest Common Ancestor of a Binary Tree
 257. Binary Tree Paths
 
 
 ### BFS
-637. Average of Levels in Binary Tree
 102. Binary Tree Level Order Traversal
+103. Binary Tree Zigzag Level Order Traversal
+117. Populating Next Right Pointers in Each Node II
+199. Binary Tree Right Side View
+637. Average of Levels in Binary Tree
+2583. Kth Largest Sum in a Binary Tree  &Minheap
 
 
 ### Swap Treenode
@@ -26,12 +31,14 @@ Return is returning cur node situation
 
 
 ### Update Node
-129.Sum Root to Leaf Numbers
+114. Flatten Binary Tree to Linked List
+129. Sum Root to Leaf Numbers
 
 
-### Irerate Tree
-inorder, preorder, postorder, bfs, dfs 
+### BST
+use inorder traversal methood
 98. Validate Binary Search Tree
+173. Binary Search Tree Iterator
 230. Kth Smallest Element in a BST
 530. Minimum Absolute Difference in BST 
 783. Minimum Distance Between BST Nodes
