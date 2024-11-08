@@ -9,6 +9,8 @@ Return is returning cur node situation
 222. Count Complete Tree Nodes
 236. Lowest Common Ancestor of a Binary Tree
 257. Binary Tree Paths
+404. Sum of Left Leaves
+543. Diameter of Binary Tree
 
 
 ### BFS

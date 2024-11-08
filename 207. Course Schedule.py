@@ -31,3 +31,38 @@ class Solution:
         return numCourses == level
 
 
+class Solution:
+    """
+    Question: if can finish all courses
+    premap: [cur]: [preqs]
+    visited.set avoid loop
+    """
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        # create premap to check cur, preq
+        premap = {i: [] for i in range(numCourses)}
+        for pre in prerequisites:
+            premap[pre[0]].append(pre[1])
+        # visitset to check cur=preq loop scene along with dfs 
+        visit = set()
+
+        def dfs(cur) -> bool:
+            # base case
+            if cur in visit:
+                return False
+            if premap[cur] == []: # no pre
+                return True
+
+            visit.add(cur)
+            for preq in premap[cur]:
+                if not dfs(preq):
+                    return False
+            # reset for tracking cur's all preq
+            visit.remove(cur)
+            premap[cur] = []
+            # finally return
+            return True
+
+        for i in range(numCourses):
+            if not dfs(i):
+                return False
+        return True

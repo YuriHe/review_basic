@@ -8,19 +8,25 @@ class Employee:
 """
 
 class Solution:
-    """
-    Question: get all importance value for itself and its direct/indirect subordinaries
-    TOPIC: DFS
-    T:O(N)
-    S:O(N)
-    """
     def getImportance(self, employees: List['Employee'], id: int) -> int:
-        all_id_to_employee = {employee.id: employee for employee in employees}
-        return self.dfs(id, all_id_to_employee)
-    
-    def dfs(self, id: int, all_id_to_employee: dict) -> int:
-        values = all_id_to_employee[id].importance
-        for subId in all_id_to_employee[id].subordinates:
-            values += self.dfs(subId, all_id_to_employee)
-        return values
+        # create hashmap id:[important, subs]
+        people = {}
+
+        # fill people dict
+        for p in employees:
+            people[p.id] = [p.importance, p.subordinates]
+
+        # find id 
+        res = people[id][0]
+
+        def dfs(subs):
+            nonlocal res
+
+            if not subs: return
+            for sub in subs:
+                res += people[sub][0]
+                dfs(people[sub][1])
+        # go to subs
+        dfs(people[id][1])
+        return res
         
