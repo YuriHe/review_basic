@@ -27,6 +27,9 @@ midcol = mid % columns.     eg.1
 ### Sliding Window
 3. Longest Substring Without Repeating Characters
 209. Minimum Size Subarray Sum
+643. Maximum Average Subarray I
+1004. Max Consecutive Ones III 
+1456. Maximum Number of Vowels in a Substring of Given Length
 2405. Optimal Partition of String
 
 

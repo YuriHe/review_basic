@@ -1,6 +1,8 @@
 ### Prefix & suffix
 238. Product of Array Except Self
 560. Subarray Sum Equals K
+724. Find Pivot Index
+1732. Find the Highest Altitude
 
 
 ### Handle Index value
@@ -13,6 +15,11 @@
 
 ### Common sense
 134. Gas Station
+
+
+### Hashmap
+1679. Max Number of K-Sum Pairs
+
 
 
 
