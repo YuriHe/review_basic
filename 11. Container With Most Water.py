@@ -13,16 +13,12 @@ class Solution:
 
         # SOLUTION2 TWO POINTER
         res = 0
-        left, right = 0, len(height)-1
-        while left < right:
-            # update
-            border = min(height[left], height[right])
-            res = max(res, border * (right-left))
-            # move 
-            if height[left] > height[right]:
-                right -= 1
-            else: # no need to ==, move both will reduce area, pick left or right
-                left += 1 
+        i, j = 0, len(height)-1
+        while i < j:
+            res = max(res, (j-i) * min(height[i], height[j]))
 
+            if height[i] < height[j]:
+                i += 1
+            else:
+                j -= 1
         return res
-                

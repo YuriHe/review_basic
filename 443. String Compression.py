@@ -1,43 +1,27 @@
 class Solution:
     """
-    Question: convert to char[freq] for consecutive chars. 
-    ISSUE: modify input array instead of create new array + track left pointer
-    TOPIC: use S:(1) Two pointer
+    Question: string compression
+    Two pointer, no need flag, but handle len(chars)+1 to add last group
     """
     def compress(self, chars: List[str]) -> int:
-        # first char 
-        count = 1
-        # track result len
-        self.left = 1 
-        # keep update flag
-        flag = chars[0]
+        if not chars: return 0
+        i = 0 # return new length of chars
+        ctn = 1 # number of char in current group
 
-        # helper , if use % / need to reverse, so just use string type
-        def append_count(count):
-            if count > 1:
-                for c in str(count):
-                    chars[self.left] = c
-                    self.left += 1
-                    
-        for i in range(1, len(chars)):
-            if chars[i] == flag: # same group
-                count += 1
+        for j in range(1, len(chars)+1):
+            if j < len(chars) and chars[j] == chars[j-1]: # in same group
+                ctn += 1
             else:
-                # handle prev group
-                append_count(count)
+                # handle old group (char + digits)
+                chars[i] = chars[j-1]
+                i += 1
+                if ctn > 1:
+                    for c in str(ctn):
+                        chars[i] = c
+                        i += 1
                 # start new group
-                count = 1
-                # update flag
-                flag = chars[i]
-                # modify val in list
-                chars[self.left] = flag
-                # jump cur char's next index which for freq
-                self.left += 1 
+                ctn = 1
         
-        # last group
-        append_count(count)
-        return self.left
+        return i
 
 
-
-        

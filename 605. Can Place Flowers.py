@@ -14,3 +14,25 @@ def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         if n <= 0:
             return True
     return False
+
+
+# show detail
+def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    if len(flowerbed) == 1 and flowerbed[0] == 0: return True
+    
+    for i in range(0, len(flowerbed)):
+        # first slot
+        if i == 0 and i+1 < len(flowerbed) and flowerbed[i] == 0 and flowerbed[i+1] == 0:
+            flowerbed[i] = 1
+            n -= 1
+        # last slot
+        elif i == len(flowerbed)-1  and i - 1 >= 0 and flowerbed[i] == 0 and flowerbed[i-1] == 0:
+            flowerbed[i] = 1
+            n -= 1
+        else:
+            if i-1 >= 0 and i+1 < len(flowerbed):
+                if flowerbed[i] == 0 and flowerbed[i-1] == 0 and flowerbed[i+1] == 0:
+                    flowerbed[i] = 1
+                    n -= 1
+
+    return n <= 0

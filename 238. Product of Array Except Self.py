@@ -6,7 +6,7 @@ class Solution:
     SOLUTION3:array
     """
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        # SOLUTION 1 Brute force
+        # SOLUTION 1 Brute force TLE
         prod = 1
         res = [0] * len(nums)
 
@@ -20,7 +20,7 @@ class Solution:
             res[i] = prod
         return res
 
-        # SOLUTION2 division
+        # SOLUTION2 division 
         zeroctn, prod = 0, 1
         res = [0] * len(nums)
 
@@ -42,7 +42,7 @@ class Solution:
                 res[i] = prod //nums[i]
         return res
         
-        # SOLUTION3
+        # SOLUTION3 extra space
         left = [1] * len(nums) # can avoid zero
         right = [1] * len(nums)
         res = [0] * len(nums)
@@ -54,6 +54,25 @@ class Solution:
         for i in range(len(res)):
             res[i] = left[i] * right[i]
         return res
+
+        # SOLUTION4 BEST
+        # avoid use left/right or said prefix suffix array, can use pointer
+        prefix, suffix = 1, 1
+        res = [1] * len(nums)
+
+        # from left to right
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
+        
+        # from right to left
+        for i in range(len(nums)-1, -1 , -1):
+            res[i] *= suffix
+            suffix *= nums[i]
+
+        return res
+
+
 
         
         

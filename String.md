@@ -1,9 +1,20 @@
+### Palindrome
+5. Longest Palindromic Substring
+125. Valid Palindrome
+266. Palindrome Permutation
+409. Longest Palindrome
+
+
+### Pattern
+1071. Greatest Common Divisor of Strings
+
+
 ### Two pointer
 2. 125.Valid Palindrome
 3. 242.Valid Anagram
 4. 290.Word Pattern
 5. 345.Reverse Vowels of a String
-6. 392.Is Subsequence
+392. Is Subsequence
 7. 443.String Compression
 8. 2108.Find First Palindromic String in the Array(EASY)
 
@@ -25,8 +36,3 @@
 859. Buddy Strings
 
 
-### Palindrome
-5. Longest Palindromic Substring
-125. Valid Palindrome
-266. Palindrome Permutation
-409. Longest Palindrome

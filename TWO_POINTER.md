@@ -35,6 +35,7 @@ midcol = mid % columns.     eg.1
 27. Remove Element
 80. Remove Duplicates from Sorted Array II
 189. Rotate Array
+283. Move Zeroes
 
 
 ### Linked list
