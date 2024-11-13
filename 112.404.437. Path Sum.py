@@ -36,3 +36,38 @@ class Solution:
         dfs(root)
 
         return res
+
+
+class Solution:
+    """
+    437. Path Sum III
+    Question: if any parent node to child node can sum up to target
+    prefix sum(560) + backtracking
+    4,4,4  target 8 -> 0:1, 4:1, 8:2 12:2
+    """
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+        res = 0
+        freq = defaultdict(int)
+        freq[0] = 1 # prefix-targetsum in freq 
+
+        def dfs(node, prefix):
+            nonlocal res
+            if not node:
+                return
+            # add cur to prefix sum
+            prefix += node.val
+            # check if meet targetsum, if yes, update res
+            if prefix - targetSum in freq:
+                res += freq[prefix-targetSum]
+            # count prefix += 1 in map
+            freq[prefix] += 1 
+
+            # recursion
+            dfs(node.left, prefix)
+            dfs(node.right, prefix)
+
+            # backtrack reset
+            freq[prefix] -= 1
+
+        dfs(root,0) # have prefix because count sum in each path
+        return res

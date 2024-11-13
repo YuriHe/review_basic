@@ -21,6 +21,11 @@
 1679. Max Number of K-Sum Pairs
 
 
+### 2D
+### Hashmap
+2352. Equal Row and Column Pairs
+
+
 
 
 

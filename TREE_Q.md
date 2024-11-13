@@ -11,6 +11,9 @@ Return is returning cur node situation
 257. Binary Tree Paths
 404. Sum of Left Leaves
 543. Diameter of Binary Tree
+872. Leaf-Similar Trees
+1372. Longest ZigZag Path in a Binary Tree
+1448. Count Good Nodes in Binary Tree
 
 
 ### BFS
@@ -35,6 +38,10 @@ Return is returning cur node situation
 ### Update Node
 114. Flatten Binary Tree to Linked List
 129. Sum Root to Leaf Numbers
+
+
+### Backtrack
+437. Path Sum III (prefixsum + backtracking)
 
 
 ### BST

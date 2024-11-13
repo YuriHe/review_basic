@@ -1,28 +1,23 @@
 class Solution:
     """
-    Question: count total time for k index, if ticket=0 then leave queue. so queue size is changing 
-    and val at k index is changing
-    TOPIC: QUEUE
+    Question: index queueing to buy ticket until ticket = 0
+    How to find index -> create q storing index
+    if found ticket = 0, remove from q
     """
     def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
-        q = deque()
-        time = 0
-        # store index to queue
+        q = deque([])
+        res = 0
         for i in range(len(tickets)):
             q.append(i)
-        # line in queue until k done     
+        
         while len(q) > 0:
-            front = q.popleft()
-            # count 1 time
-            time += 1
-            # bought one ticket
-            tickets[front] -= 1
-            # person at k and bought all tickets already, no left tickets
-            if front == k and tickets[front] == 0:
-                return time
-            # if still have tickets go to back, next queue, otherwise leave queue
-            if tickets[front] != 0:
-                q.append(front)
-        return time
+            first = q.popleft()
+            tickets[first] -= 1
+            res += 1
+            if tickets[k] == 0:
+                return res
+            if tickets[first] > 0:
+                q.append(first)
             
+        return res
 
