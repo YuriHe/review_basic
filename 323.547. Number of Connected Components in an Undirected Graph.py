@@ -59,7 +59,7 @@ class Solution:
     """
     547. Number of Provinces
     Unionfind merge connected in undirect graph
-    O(E+V) dfd
+    O(E+V)
     """
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         n = len(isConnected)
