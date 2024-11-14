@@ -8,6 +8,7 @@
 class Solution:
     """
     Question: find one node is lowest command ancestor of st start from [p,q]nodes, allow ancestor also descendant
+    p and q node are both existed
     """
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         if not root: return None

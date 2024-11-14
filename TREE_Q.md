@@ -22,6 +22,7 @@ Return is returning cur node situation
 117. Populating Next Right Pointers in Each Node II
 199. Binary Tree Right Side View
 637. Average of Levels in Binary Tree
+1161. Maximum Level Sum of a Binary Tree
 2583. Kth Largest Sum in a Binary Tree  &Minheap
 
 
@@ -49,6 +50,7 @@ use inorder traversal methood
 98. Validate Binary Search Tree
 173. Binary Search Tree Iterator
 230. Kth Smallest Element in a BST
+450. Delete Node in a BST
 530. Minimum Absolute Difference in BST 
 783. Minimum Distance Between BST Nodes
 938. Range Sum of BST
@@ -69,10 +71,18 @@ A height-balanced binary tree is defined as a binary tree in which the height of
 
 
 ### SOLUTION
-#### Solution1: Recursion
+All tree solution, must handle if not root, return None/ []
+
+#### Solution1
 base case: if not root: return ..
-rec base: return self.func(xx.left)
-if build tree: return node
+rec base: self.func(xx.left)
+no return
+
+#### Solution2
+base case: if not root: return None
+update varaible(mutable var, nonlocal)
+recursion: node1 = self.func(node.left)
+return node  or node1 | node2
 
 
 
