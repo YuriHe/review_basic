@@ -18,10 +18,12 @@ midcol = mid % columns.     eg.1
 162. Find Peak Element
 278. First Bad Version
 704. Binary Search
+875. Koko Eating Bananas
 
 
 ### Sort+Binary search
 15. 3Sum
+2300. Successful Pairs of Spells and Potions
 
 
 ### Sliding Window

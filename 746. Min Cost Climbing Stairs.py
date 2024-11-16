@@ -18,4 +18,4 @@ class Solution:
             # choose min cost from pre step, or pre-pre step then + cost, to get updated min cost for this point
             dp[i] = min(dp[i-2],dp[i-1]) + cost[i]
 
-        return min(dp[l-1],dp[l-2]) # compare starting point
+        return min(dp[l-1],dp[l-2]) # dp[l-2] mean no cost to reach last, dp[l-1] comes from previous second step

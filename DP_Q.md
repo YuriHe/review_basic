@@ -26,14 +26,22 @@ Ask if can get result from combination
 70. Climbing Stairs
 198. House Robber
 746. Min Cost Climbing Stairs
-### DP 1D Bottom-Up (think reversly from top down(dfs backtracking))
+### DP 1D Bottom-Up 
+start from base case
 139. Word Break
 300. Longest Increasing Subsequence
 322. Coin Change
+1137. N-th Tribonacci Number
 ### DP top-down memorization/recursion
 494. Target Sum
 
 
 ### DP 2D
+#### bottomup
+1143. Longest Common Subsequence
+
+
+
+
 62. Unique Paths
 64. Minimum Path Sum

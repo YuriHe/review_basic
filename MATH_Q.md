@@ -11,7 +11,7 @@ while num> 0: num%10 is last_digit, num //=2
 137. Single Number II
 190. Reverse Bits
 191. Number of 1 Bits
-
+338. Counting Bits
 
 
 263. Ugly Number(...)

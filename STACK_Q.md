@@ -10,3 +10,9 @@
 150. Evaluate Reverse Polish Notation
 155. Min Stack
 735. Asteroid Collision
+
+
+### Monotonic stack
+Ask consecutive increasing/decreasing number
+739. Daily Temperatures
+901. Online Stock Span

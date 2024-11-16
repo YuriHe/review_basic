@@ -2,8 +2,22 @@
 841. Keys and Rooms (dfs is ok)
 
 
-### Union find
+### Union find - Undirected graph
 323. Number of Connected Components in an Undirected Graph
+
+### Directed graph
+1466. Reorder Routes to Make All Paths Lead to the City Zero
+
+
+### What is graph
+edge between i and j
+node
+directed or undirected
+Time: O(E+V)
+
+
+
+
 
 ### BFS
 #### Usage
