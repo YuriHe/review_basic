@@ -58,7 +58,9 @@ use inorder traversal methood
 
 ### Prefix tree(dictionary tree)
 208. Implement Trie (Prefix Tree)
+211. Design Add and Search Words Data Structure
 1233. Remove Sub-Folders from the Filesystem
+1268. Search Suggestions System
 
 
 ### Concept

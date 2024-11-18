@@ -1,5 +1,5 @@
 ### Iterate number
-while num> 0: num%10 is last_digit, num //=2 
+while num> 0: num%10 is last_digit, num //=10
 9. Palindrome Number
 66. Plus One
 202. Happy Number

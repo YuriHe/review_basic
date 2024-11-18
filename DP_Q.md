@@ -20,11 +20,13 @@ Rule: how to handle dp[i]
 Ask accumulated wayss for combination
 Ask max/min accumulated profit for many combinations(ways, add)
 Ask if can get result from combination
+choices + optimal substructure + overlap subproblems
 
 
 ### DP 1D
 70. Climbing Stairs
 198. House Robber
+714. Best Time to Buy and Sell Stock with Transaction Fee
 746. Min Cost Climbing Stairs
 ### DP 1D Bottom-Up 
 start from base case
@@ -38,10 +40,12 @@ start from base case
 
 ### DP 2D
 #### bottomup
-1143. Longest Common Subsequence
-
-
-
-
 62. Unique Paths
 64. Minimum Path Sum
+1143. Longest Common Subsequence
+#### memorization
+72. Edit Distance
+
+
+### Tricky DP
+790. Domino and Tromino Tiling

@@ -116,3 +116,28 @@ def count1(self, n):
         ctn += n & 1
         n >>= 1
     return ctn
+
+
+"""
+    1318. Minimum Flips to Make a OR b Equal to c
+    A or B = C flip 0 or 1
+"""
+def minFlips(self, a: int, b: int, c: int) -> int:
+    flips = 0
+    while a > 0 or b > 0 or c > 0: # use or not and
+        # extract least significant bit of a, b, c
+        a_bit = a &1
+        b_bit = b &1
+        c_bit = c &1
+
+        if c_bit == 1:
+            if a_bit == 0 and b_bit == 0:
+                flips +=1 # only one of them
+        else:
+            flips += (a_bit + b_bit)
+        
+        # shift right and check next bit
+        a >>= 1
+        b >>= 1
+        c >>= 1
+    return flips
