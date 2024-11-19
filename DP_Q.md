@@ -44,6 +44,7 @@ start from base case
 64. Minimum Path Sum
 1143. Longest Common Subsequence
 #### memorization
+def dfs return memo[i][j]
 72. Edit Distance
 
 

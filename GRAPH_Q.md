@@ -5,7 +5,9 @@
 ### Union find - Undirected graph
 323. Number of Connected Components in an Undirected Graph
 
-### Directed graph
+
+### Directed weighted graph
+399. Evaluate Division
 1466. Reorder Routes to Make All Paths Lead to the City Zero
 
 

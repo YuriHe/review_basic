@@ -13,6 +13,8 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 #### Min-heap
 215. Kth Largest Element in an Array
 2336. Smallest Number in Infinite Set
+2542. Maximum Subsequence Score
+2462. Total Cost to Hire K Workers
 
 
 ### Array sort
