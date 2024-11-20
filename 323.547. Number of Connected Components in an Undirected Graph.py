@@ -80,7 +80,7 @@ class Solution:
         # union rank, attach smaller tree to larger one
         def union(n1, n2):
             f1, f2 = find(n1), find(n2)
-            if f1 == f2: # same node
+            if f1 == f2: # same node or already in group
                 return 0 # nothing to union
             
             # check rank

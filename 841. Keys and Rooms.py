@@ -29,21 +29,20 @@ class Solution:
                     unlock_room.add(key)
         return len(visited_room) == len(rooms)
 
-        # SOLUTION 2 dfs
-        if not rooms: return False
-        visited = set()
+        # SOLUTION 2 dfs 100% pass
+        if not rooms: 
+            return False
+
+        visit= set()
         def dfs(room):
-            # NO NEED!
-            # if not room:
-            #     return
-            # update
-            visited.add(room)
-            keys = rooms[room]
-            for key in keys:
+            if room in visit:
+                return
+            visit,add(room)
+
+            for key in rooms[room]:
                 if key not in visited:
                     dfs(key)
 
         # start 0 room
         dfs(0)
-        print(visited)
-        return len(visited) == len(rooms)
+        return len(visit) == len(rooms)

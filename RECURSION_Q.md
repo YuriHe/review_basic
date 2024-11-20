@@ -20,4 +20,3 @@
 
 ### BFS
 994. Rotting Oranges
-1926. Nearest Exit from Entrance in Maze
