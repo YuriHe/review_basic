@@ -22,7 +22,9 @@
 
 
 ### 2D
-### Hashmap
+### Hashmap/set
+73. Set Matrix Zeroes
+289. Game of Life
 2352. Equal Row and Column Pairs
 
 

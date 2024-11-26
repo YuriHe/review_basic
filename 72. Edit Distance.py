@@ -10,10 +10,11 @@ class Solution:
         if not word2 and word1: return len(word1)
 
         # set 2d memo
+        # WHY: not 1D, since need to mark [i][j] two indexes from two strings and memorize their optimizal scene in cur state
         memo =[[0 for j in range(len(word1))] for i in range(len(word2))]
 
         def dfs(i, j):
-            # base case
+            # base case MUST CHECK boundary first
             if i == len(word2):
                 # no use memo, but use rest of word1
                 return len(word1) - j

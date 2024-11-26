@@ -8,8 +8,8 @@ Sort start or end, if merge all overlap sort start.
 
 
 ### Heap Sort
-Min-Heap: Smallest element at the root; parent nodes are smaller than their children.
-Max-Heap: Largest element at the root; parent nodes are larger than their children.
+Min-Heap: Smallest element at the root; parent nodes are smaller than their children.(x as default)
+Max-Heap: Largest element at the root; parent nodes are larger than their children.(-x)
 #### Min-heap
 215. Kth Largest Element in an Array
 2336. Smallest Number in Infinite Set

@@ -141,3 +141,19 @@ def minFlips(self, a: int, b: int, c: int) -> int:
         b >>= 1
         c >>= 1
     return flips
+
+
+"""
+    50. Pow(x, n)
+    2 ^ 2 = 2^2(go base) * 1(go res)
+    2 ^ 1 = 2(go res)
+"""
+def myPow(self, x: float, n: int) -> float:
+    res = 1
+    power = abs(n)
+    while power > 0:
+        if power & 1: # check least significant bit is 1
+            res *= x
+        x *= x # x^2, x^4
+        power >>= 1
+    return res if n >= 0 else 1/res

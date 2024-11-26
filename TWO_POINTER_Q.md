@@ -13,6 +13,7 @@ midcol = mid % columns.     eg.1
 33. Search in Rotated Sorted Array
 34. Find First and Last Position of Element in Sorted Array
 35. Search Insert Position
+69. Sqrt(x) # return right, since left<= right, right is math.floor
 74. Search a 2D Matrix
 153. Find Minimum in Rotated Sorted Array
 162. Find Peak Element
@@ -45,6 +46,7 @@ midcol = mid % columns.     eg.1
 
 ### Linked list
 #### Create linkedlist
+2. Add Two Numbers
 21. Merge Two Sorted Lists
 #### Iterate linkedlist
 141. Linked List Cycle

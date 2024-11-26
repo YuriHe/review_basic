@@ -66,3 +66,37 @@ class Solution:
             if not dfs(i):
                 return False
         return True
+
+"""
+Use BFS + hashmap
+hashmap store {preq: [next classes]} -> save time iterate whole preprequisite when nested loop
+list store cur's preq count: indegree[cur] += 1
+"""
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        completed = 0
+        # {preq: cur(next class)}
+        preq = defaultdict(list)
+        indegree = [0] * numCourses
+        for cur, p in prerequisites: 
+            preq[p].append(cur)
+            indegree[cur] += 1
+
+        # find no preq store to the q
+        q = deque([])
+        for i, v in enumerate(indegree):
+            if v == 0:
+                q.append(i)
+        # push no preq 
+        while q:
+            cur = q.popleft()
+            completed += 1
+            if cur in preq:
+                # unlock classes in values
+                for c in preq[cur]:
+                    indegree[c] -= 1
+                    if indegree[c] == 0:
+                        # push into queue
+                        q.append(c)
+
+        return True if completed == numCourses else False

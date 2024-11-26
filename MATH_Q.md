@@ -6,6 +6,7 @@ while num> 0: num%10 is last_digit, num //=10
 
 
 ### Bit Manipulation
+50. Pow(x, n)
 67. Add Binary
 136. Single Number
 137. Single Number II
