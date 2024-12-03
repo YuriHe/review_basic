@@ -1,60 +1,49 @@
-# Topological Sort
-# Directed graph
-# 1way: Use BFS Kahn algorithm
-# 2way: Use DFS
+# Insertion Sort
 """
-1 Problem: Calculate the Minimum Total Time to Complete All Tasks Given Durations and Dependencies
-Description: You are tasked with scheduling several tasks. Each task has an execution time, and there are dependencies between some tasks, meaning that certain tasks must be completed before others. You need to calculate the minimum total time required to complete all tasks.
+Insertion Sort is a simple sorting algorithm that move one element at a time, from left to right.
+It works by repeatedly taking an element from the unsorted portion and inserting it into its correct position in the sorted portion of the list.
+
+x <= pivot | pivot | unsort
+
+Example 1:
+
 Input:
-An integer n representing the number of tasks.
-An integer array times, where times[i] represents the time required to complete task i.
-A 2D array prerequisites, where prerequisites[i] = [a, b] indicates that task a must be completed before task b, i.e., task a is a prerequisite for task b.
+pairs = [(5, "apple"), (2, "banana"), (9, "cherry")]
+
 Output:
-Return the minimum total time required to complete all tasks.
-Use BFS
+[[(5, "apple"), (2, "banana"), (9, "cherry")], 
+ [(2, "banana"), (5, "apple"), (9, "cherry")], 
+ [(2, "banana"), (5, "apple"), (9, "cherry")]]
+Notice that the output shows the state of the array after each insertion. The last state is the final sorted array. There should be pairs.length states in total.
 """
-from collections import deque, defaultdict
+# Definition for a pair.
+class Pair:
+    def __init__(self, key: int, value: str):
+        self.key = key
+        self.value = value
+class Solution:
+    """
+    Use two pointer, compare cur value to sorted array, if less then swap, continue 
+    find smaller in sorted list(from right to left)
+    T: O(n^2) for average&worst, O(n) for best
+    """
+    def insertionSort(self, pairs: List[Pair]) -> List[List[Pair]]:
+        n = len(pairs)
+        res = []
+        
+        for i in range(n):
+            j = i - 1
 
-def shortestTimeToFinishTasks(n, times, prerequisites):
-    neighbors = defaultdict(list)
-    finished_time = [0] * n
-    indegree = [0] * n
+            while j >= 0 and pairs[j+1].key < pairs[j].key:
+                # swap with cur and continue find smaller in sorted list
+                pairs[j+1], pairs[j] = pairs[j], pairs[j+1]
+                j -= 1
 
-    for pre, cur in prerequisites:
-        neighbors[pre].append(cur)
-        indegree[cur] += 1
-    
-    # fill q, store(task i, time)
-    q = deque([]) 
-    completed = 0
-    for i in range(n):
-        if indegree[i] == 0:
-                # no prerequisite,execute task
-                q.append(i)
-                finished_time[i] = times[i]
+            res.append(pairs[:])
 
-
-    while len(q) > 0:
-        first = q.popleft()
-        completed += 1
-        for i in neighbors[first]:
-            indegree[i] -= 1
-            # update finished time
-            # when finish in parallel
-            finished_time[i] = max(finished_time[i], finished_time[first] + times[i])
-
-            if indegree[i] == 0: # no preq
-                # push into q
-                q.append(i)
+        return res
+        
 
 
 
-    print(completed)
-    print(finished_time)
-    return max(finished_time) if completed == n else -1
 
-n = 6
-times = [2, 3, 2, 1, 4, 2]
-prerequisites = [[0, 2], [1, 2], [2, 3], [3, 4], [4, 5]]
-
-print(shortestTimeToFinishTasks(n, times, prerequisites))  # Output: 12

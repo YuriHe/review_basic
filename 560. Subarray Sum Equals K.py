@@ -3,6 +3,7 @@ class Solution:
     Question: return total number of subarrays who sum = target
     1.count all subarray sum = target => prefix sum, not sliding window
     2.presum[i] = presum[j](in dict) + k, update dict[presum[i] - k] = occurance
+    ! Not use sliding window since probably negative number and dynamic boundry
     """
     def subarraySum(self, nums: List[int], k: int) -> int:
         # check prefix sum check prefixsum - target in hashmap 

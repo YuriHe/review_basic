@@ -25,6 +25,7 @@
 ### Hashmap/set
 73. Set Matrix Zeroes
 289. Game of Life
+766. Toeplitz Matrix
 2352. Equal Row and Column Pairs
 
 
