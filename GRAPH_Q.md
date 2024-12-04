@@ -42,6 +42,8 @@ directed or undirected
 Time: O(E+V)
 
 
+### Dijkstra's algorithm
+1514. Path with Maximum Probability (maxheap)
 
 
 
