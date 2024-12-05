@@ -8,7 +8,7 @@ fixed size of bfs and seach layer by layer
 1926. Nearest Exit from Entrance in Maze
 
 
-### Union find - Undirected graph
+### Union find - Undirected graph - Disjoin Set
 #### Template
 When use: group direct/indrect connections
 parent = [i for i in range(nodes)]
@@ -43,7 +43,13 @@ Time: O(E+V)
 
 
 ### Dijkstra's algorithm
+shortest path - greedy BFS - heap
 1514. Path with Maximum Probability (maxheap)
+
+
+
+
+
 
 
 
