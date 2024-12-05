@@ -23,8 +23,8 @@ class Solution:
             inorder(node.left)
             
             if prev is not None:
-                diff = min(diff, abs(prev - node.val))
-            prev = node.val
+                diff = min(diff, abs(prev.val - node.val))
+            prev = node
 
             inorder(node.right)
             
