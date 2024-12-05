@@ -6,7 +6,7 @@ class Solution:
     Time complexity:
     build graph: O(E), iterate edges and prob list 
     traverse graph: Dijkstra algorithm using max heap: heap operation: insertion+pop will take (logV) where V is the number of nodes
-    and explore neighbors,traverse V's E edges, so time is O(E log V)
+    and explore neighbors,traverse V's E edges, so time is O(ElogV)
     """
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start_node: int, end_node: int) -> float:
         # build graph

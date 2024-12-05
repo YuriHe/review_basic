@@ -39,11 +39,11 @@ define visit
 edge between i and j
 node
 directed or undirected
-Time: O(E+V)
+Time: O(E+V) or O(ElogV)
 
 
-### Dijkstra's algorithm
-shortest path - greedy BFS - heap
+### Dijkstra's algorithm 
+shortest path - greedy BFS - heap - T:O(ElogV)
 1514. Path with Maximum Probability (maxheap)
 
 

@@ -29,6 +29,10 @@
 2352. Equal Row and Column Pairs
 
 
+### Kadane's algorithm
+53. Maximum Subarray
+
+
 
 
 
