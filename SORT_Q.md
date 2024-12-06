@@ -15,6 +15,8 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 2336. Smallest Number in Infinite Set
 2542. Maximum Subsequence Score
 2462. Total Cost to Hire K Workers
+#### Max-heap
+373. Find K Pairs with Smallest Sums
 
 
 ### Array sort

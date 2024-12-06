@@ -14,9 +14,9 @@ for flexiable size of data, less retrieve but more insert/delete
 
 ### Heap
 #### Complexity
-each max_heapify or min_heapify: O(logn)
+each max_heapify or min_heapify: O(logn) or O(logk)
 build_maxheap or build_minheap: O(n)
-heap_sort for all: O(nlogn)
+heap_sort for all: O(nlogk)
 Space: O(n)
 #### Usage
 certain K slot

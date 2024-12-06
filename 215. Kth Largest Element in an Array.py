@@ -25,6 +25,17 @@ def findKthLargest(self, nums: List[int], k: int) -> int:
         root of heap always contains Kth largest element
         return heap[0] which kth largest
     """
+    # store all nums to heap list and heapify
+    # pop the heap k times
+    # T: O(nlogn)
+    heap = [n for n in nums]
+    heapq.heapify(heap)
+    while len(heap) > k:
+        heapq.heappop(heap)
+
+    return heap[0]
+
+    # better keep k size O(nlogk)
     heap = []
     for n in nums:
         heapq.heappush(heap, n)
