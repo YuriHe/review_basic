@@ -48,6 +48,7 @@ midcol = mid % columns.     eg.1
 #### Create linkedlist
 2. Add Two Numbers
 21. Merge Two Sorted Lists
+148. Sort List
 #### Iterate linkedlist
 141. Linked List Cycle
 2130. Maximum Twin Sum of a Linked List
