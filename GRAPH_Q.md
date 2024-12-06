@@ -30,6 +30,27 @@ When use:
 Steps:
 define queue
 define visit
+##### Template
+```
+# build graph
+adj = defaultdict(list) # src: [des, val]
+for i, v in enumerate(equations):
+    src, des = v
+    adj[src].append([des, values[i]])
+    adj[des].append([src, 1/values[i]])
+
+q=deque([])
+q.append((src, 1)) # only tuple, not list in queue
+visit=set()
+visit.add(src)
+while q:
+cur,val = q.popleft()
+for nei, weight in adj[cur]:
+    if nei not in visit:
+        q.append((nei, weight*val))
+        visit.add(nei)
+```
+
 399. Evaluate Division
 1129. Shortest Path with Alternating Colors
 1376. Time Needed to Inform All Employees (directed tree, no cycle, no visit)

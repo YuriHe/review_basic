@@ -2,35 +2,44 @@ class Solution:
     """
     Question: convert this equations to diected weight graph
     BFS
+    T: 
+    build graph: O(n), n is number of equations or values
+    bfs: each query will traverse every node and edge O(V+E)
+    total is m * O(E+V) + O(n), m is number of query
     """
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        # build graph store (src: [[des1, value], [des2, value]])
-        adj = defaultdict(list)
+        # graph , bfs, deque, directed weight, visit
+        # create graph
+        adj = defaultdict(list) # src: [des, val]
         for i, v in enumerate(equations):
-            # a: [b, v], b:[a, 1/v]
-            a,b = v
-            adj[a].append([b, values[i]])
-            adj[b].append([a, 1 / values[i]])
-        
-        # use bfs to get one query'result
-        def bfs(src, target):
-            q = deque()
-            q.append([src, 1])
-            visited = set()
-            visited.add(src)
+            src, des = v
+            adj[src].append([des, values[i]])
+            adj[des].append([src, 1/values[i]])
 
-            if src not in adj or target not in adj:
+        # bfs and lookup adj dic, find des child (cross many relatives)
+        def bfs(src, des):
+            # handle undefine
+            if src not in adj or des not in adj:
                 return -1
-            
+
+            # create queue
+            q = deque([])
+            q.append((src, 1))
+            visit = set()
+            visit.add(src)
+
             while q:
-                n, w = q.popleft()
-                if n == target:
-                    return w # that is result
-                for ne, weight in adj[n]:
-                    if ne not in visited:
-                        q.append([ne, w * weight])
-                        visited.add(ne)
+                cur, val = q.popleft()
+                # find des child, exit early
+                if cur == des:
+                    return val
+                
+                for nei, w in adj[cur]:
+                    if nei not in visit:
+                        q.append((nei, val*w))
+                        visit.add(nei)
+            
             return -1
-        return [bfs(q1, q2) for q1, q2 in queries]
 
-
+        # iterate query from graph and do bfs
+        return [bfs(src, des) for src, des in queries]

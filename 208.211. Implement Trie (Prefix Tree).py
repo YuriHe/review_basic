@@ -1,51 +1,43 @@
 """
 208. Implement Trie
 """
-class TrieNode:
-    # create TriNode class having character, isEnd, children[] members. children[] store TriNodes(letter) which track next node
-    def __init__(self, ch=None):
-        self.ch = ch
-        self.isEnd = False
-        self.children = [None] * 26 # only lowercase
+class Node:
+    def __init__(self, char = None):
+        self.val = char
+        self.child = [None] * 26 # store node
+        self.end = False
 
 class Trie:
-    """
-    Dictionary Tree/Trie Tree
-    """
-    def __init__(self):
-        # create Root note
-        self.root = TrieNode(ch=None)
-        
-    def insert(self, word: str) -> None: # O(len(w))
-        # build trie tree
-        # define cur to track node
-        cur = self.root
-        for c in word:
-            if not cur.children[ord(c) - ord('a')]:
-                # if None then create TrieNode
-                cur.children[ord(c) - ord('a')] = TrieNode(c)
-            # track next node with lettter
-            cur = cur.children[ord(c) - ord('a')]
-        # finsih iterate word
-        cur.isEnd = True
 
-    def search(self, word: str) -> bool: # O(len(w))
+    def __init__(self):
+        # create tree node
+        self.root = Node()
+        
+    def insert(self, word: str) -> None:
         cur = self.root
         for c in word:
-            if not cur.children[ord(c)-ord('a')]:
-                # this Trienode not exist
+            idx = ord(c) - ord('a')
+            if cur.child[idx] is None:
+                cur.child[idx] = Node(c)
+            cur = cur.child[idx]
+        cur.end = True
+    
+    def search(self, word: str) -> bool:
+        cur = self.root
+        for c in word:
+            idx = ord(c) - ord('a')
+            if cur.child[idx] is None:
                 return False
-            else:
-                cur = cur.children[ord(c)-ord('a')]
-        return cur.isEnd 
+            cur = cur.child[idx]
+        return cur.end
         
-    def startsWith(self, prefix: str) -> bool: # O(len(p))
+    def startsWith(self, prefix: str) -> bool:
         cur = self.root
         for c in prefix:
-            if not cur.children[ord(c)-ord('a')]:
+            idx = ord(c) - ord('a')
+            if cur.child[idx] is None:
                 return False
-            else:
-                cur = cur.children[ord(c)-ord('a')]
+            cur = cur.child[idx]
         return True
         
 
@@ -60,49 +52,52 @@ class Trie:
 """
 211. Design Add and Search Words Data Structure
 """
-class TrieNode:
-    def __init__(self, c=None):
-        self.char = c
-        self.children = [None] * 26 # 26 letter store Node
-        self.isEnd = False
+class Node:
+    def __init__(self, char = None):
+        self.val = char
+        self.child = {} # char: Node; use {} if all characters, use[None]*26 if only lowercaser letters
+        self.end = False
 
 class WordDictionary:
 
     def __init__(self):
-        self.root = TrieNode(None)
+        self.root = Node()
         
     def addWord(self, word: str) -> None:
-        node = self.root
+        cur = self.root
         for c in word:
-            idx = ord(c) - ord('a')
-            if not node.children[idx]:
-                node.children[idx] = TrieNode(c)
-            node = node.children[idx]
-        node.isEnd = True
-        
+            if c not in cur.child:
+                cur.child[c] = Node(c)
+            cur = cur.child[c]
+        cur.end = True
+            
     def search(self, word: str) -> bool:
         cur = self.root
-    
-        def dfs(index,node):
-            # base case
-            if not node:
+
+        # dfs go through whole woord
+        def dfs(idx, cur):
+            # handle node is None
+            if cur is None:
                 return False
-            if index == len(word):
-                return node.isEnd
-            c = word[index]
-            if c == '.':
-                for i in range(26):
-                    if dfs(index+1,node.children[i]):
+            # reach end of word
+            if idx == len(word):
+                return cur.end
+
+            if word[idx] == '.':
+                # recursion call when iterate each key in child dict
+                for k in cur.child:
+                    if dfs(idx+1, cur.child[k]): # find one path meet
                         return True
+                # try all paths, fail to find word
                 return False
             else:
-                child = node.children[ord(c) - ord('a')]
-                if not child:
+                if word[idx] not in cur.child:
                     return False
                 else:
-                    return dfs(index+1,child)
-        
-        return dfs(0,cur)
+                    # keep search next char in word from word[idx]'s all children
+                    return dfs(idx+1, cur.child[word[idx]])
+
+        return dfs(0, cur)
 
         
 
