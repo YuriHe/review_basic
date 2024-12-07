@@ -25,6 +25,7 @@ midcol = mid % columns.     eg.1
 
 ### Sort+Binary search
 15. 3Sum
+436. Find Right Interval
 2300. Successful Pairs of Spells and Potions
 
 
