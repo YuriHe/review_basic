@@ -20,6 +20,7 @@ midcol = mid % columns.     eg.1
 278. First Bad Version
 704. Binary Search
 875. Koko Eating Bananas
+1760. Minimum Limit of Balls in a Bag
 
 
 ### Sort+Binary search

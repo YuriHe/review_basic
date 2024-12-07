@@ -29,10 +29,14 @@
 408. Valid Word Abbreviation
 806. Number of Lines To Write String
 824. Goat Latin
+
+
 1324. Print Words Vertically
 830. Positions of Large Groups
 1935. Maximum Number of Words You Can Type
+2224. Minimum Number of Operations to Convert Time
 2273. Find Resultant Array After Removing Anagrams
 859. Buddy Strings
+
 
 
