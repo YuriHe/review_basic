@@ -29,7 +29,7 @@ class Solution:
         return res
     
 
-    # SOLUTIN2: dfs
+    # SOLUTIN2: dfs 100% pass
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         def dfs(node, cur_sum):
             if not node:
@@ -39,4 +39,25 @@ class Solution:
                 return cur
             return dfs(node.left, cur) + dfs(node.right, cur)
         return dfs(root, 0)
+
+    # slow
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        res = 0
+
+        def helper(node, digit):
+            nonlocal res
+            if not node:
+                return
+            digit = digit*10 + node.val
+            if not node.left and not node.right:
+                # leaf
+                res += digit
+                return 
+            
+            # recursion
+            helper(node.left, digit)
+            helper(node.right, digit)
+
+        helper(root, 0)
+        return res
             
