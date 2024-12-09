@@ -68,35 +68,37 @@ class Solution:
         return True
 
 """
+Best!
 Use BFS + hashmap
 hashmap store {preq: [next classes]} -> save time iterate whole preprequisite when nested loop
 list store cur's preq count: indegree[cur] += 1
 """
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        completed = 0
-        # {preq: cur(next class)}
-        preq = defaultdict(list)
+        # gragh preq dict {preq: [c1, c2, ....]}
+        # use dic store pre- cur relation
+        preq = collections.defaultdict(list)
+        # indegree list store cur course's preq
         indegree = [0] * numCourses
-        for cur, p in prerequisites: 
-            preq[p].append(cur)
+        for cur, pre in prerequisites:
+            preq[pre].append(cur)
             indegree[cur] += 1
-
-        # find no preq store to the q
+        # q store course which can take right away which means indegree[i] = 0
         q = deque([])
-        for i, v in enumerate(indegree):
-            if v == 0:
+        for i, c in enumerate(indegree):
+            if c == 0:
                 q.append(i)
-        # push no preq 
+        taken = 0
+
         while q:
             cur = q.popleft()
-            completed += 1
-            if cur in preq:
-                # unlock classes in values
-                for c in preq[cur]:
-                    indegree[c] -= 1
-                    if indegree[c] == 0:
-                        # push into queue
-                        q.append(c)
+            taken += 1
 
-        return True if completed == numCourses else False
+            # find incoming courses
+            for c in preq[cur]:
+                indegree[c] -= 1 # since cur taken for them
+                if indegree[c] == 0:
+                    # push to q
+                    q.append(c)
+
+        return taken == numCourses

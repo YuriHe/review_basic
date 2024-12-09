@@ -22,7 +22,7 @@ class Solution:
             if not node: return 
             inorder(node.left)
             
-            if prev is not None:
+            if prev and node:
                 diff = min(diff, abs(prev.val - node.val))
             prev = node
 

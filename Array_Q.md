@@ -11,6 +11,7 @@
 54. Spiral Matrix
 271. Encode and Decode Strings
 380. Insert Delete GetRandom O(1)
+3152. Special Array II
 
 
 ### Common sense
@@ -34,6 +35,8 @@
 918. Maximum Sum Circular Subarray
 
 
+### Tricky
+849. Maximize Distance to Closest Person
 
 
 

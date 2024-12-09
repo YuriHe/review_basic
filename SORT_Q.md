@@ -3,8 +3,10 @@ Sort start or end, if merge all overlap sort start.
    
 56. Merge Intervals
 57. Insert Interval
+252. Meeting Rooms
 435. Non-overlapping Intervals
 452. Minimum Number of Arrows to Burst Balloons
+986. Interval List Intersections
 2054. Two Best Non-Overlapping Events
 
 

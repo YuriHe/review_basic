@@ -21,3 +21,22 @@ class Solution:
      
         return "/" + "/".join(stack)
 
+    # 2 way
+    def simplifyPath(self, path: str) -> str:
+        # string pattern/rule
+        # stack
+        # split / delimiter convert str to list 
+        stack = []
+        arr = path.split("/")
+        # remove all fasly in arr
+        ls = list(filter(None, arr))
+        for w in ls:
+            if w == ".":
+                continue
+            elif w == "..":
+                if stack:
+                    stack.pop()
+            else:
+                stack.append(w)
+        return "/" + "/".join(stack)
+
