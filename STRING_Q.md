@@ -31,6 +31,16 @@
 824. Goat Latin
 
 
+### Handle Substring
+#### template 
+1.generate all substring of given length for all start index 
+```
+for i in range(len(s) - length+1):
+    sub = s[i: i+length]
+```
+2981. Find Longest Special Substring That Occurs Thrice I
+
+
 1324. Print Words Vertically
 830. Positions of Large Groups
 1935. Maximum Number of Words You Can Type

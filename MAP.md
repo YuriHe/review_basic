@@ -2,6 +2,9 @@
 146. LRU Cache
 
 
+### hashmap + set
+1647. Minimum Deletions to Make Character Frequencies Unique
+
 
 
 

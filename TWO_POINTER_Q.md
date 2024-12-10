@@ -30,8 +30,20 @@ midcol = mid % columns.     eg.1
 
 
 ### Sliding Window
+#### template
+count = [0] * n
+left, right = 0, 0
+while right < arr:
+    # update count += 1
+    # handle invalid window
+    if .... >:
+        move left 
+        decrement count
+    # update valid res
+
 3. Longest Substring Without Repeating Characters
 209. Minimum Size Subarray Sum
+424. Longest Repeating Character Replacement
 643. Maximum Average Subarray I
 1004. Max Consecutive Ones III  1493. Longest Subarray of 1's After Deleting One Element
 1456. Maximum Number of Vowels in a Substring of Given Length
