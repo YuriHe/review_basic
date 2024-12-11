@@ -9,6 +9,29 @@ low = 0, high = m*n-1       eg.0, 3*4-1=11
 mid = (low+high) // 2       eg.5
 midrow = mid // columns     eg.1
 midcol = mid % columns.     eg.1
+##### template
+1.
+```
+start=0,end=len-1
+while start<=end:
+    mid = (start+end)//2
+    if nums[mid]<target:
+        start =mid+1
+    else:
+        end =mid-1
+//(end, start)
+```
+2.
+```
+left=0,right=len
+while left<right:
+    mid
+    if nums[mid] < target:
+        left=mid+1
+    else:
+        right=mid
+//(left==right)
+```
 
 33. Search in Rotated Sorted Array
 34. Find First and Last Position of Element in Sorted Array
@@ -18,9 +41,12 @@ midcol = mid % columns.     eg.1
 153. Find Minimum in Rotated Sorted Array
 162. Find Peak Element
 278. First Bad Version
+410. Split Array Largest Sum
 704. Binary Search
 875. Koko Eating Bananas
+1011. Capacity To Ship Packages Within D Days
 1760. Minimum Limit of Balls in a Bag
+2141. Maximum Running Time of N Computers
 
 
 ### Sort+Binary search
@@ -48,6 +74,7 @@ while right < arr:
 1004. Max Consecutive Ones III  1493. Longest Subarray of 1's After Deleting One Element
 1456. Maximum Number of Vowels in a Substring of Given Length
 2405. Optimal Partition of String
+2779. Maximum Beauty of an Array After Applying Operation
 
 
 ### Modify in-place with (1) extra memory

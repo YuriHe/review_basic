@@ -13,6 +13,7 @@ def search(self, ls, target):
 
 """
 875. Koko Eating Bananas
+guess
 """
 def minEatingSpeed(self, piles: List[int], h: int) -> int:
     # find max pile because maximum speed no matter h
@@ -30,3 +31,24 @@ def minEatingSpeed(self, piles: List[int], h: int) -> int:
             right = mid - 1
 
     return left
+
+def minEatingSpeed(self, piles: List[int], h: int) -> int:
+
+        def totalH(speed):
+            # hours needed for eating all bananas
+            hour = 0
+            for p in piles:
+                hour += math.ceil(p / speed)
+            return hour
+             
+        left, right = 1, max(piles)
+        while left <= right: # about determining speed
+            mid = (left+right) // 2
+            if totalH(mid) > h:
+                # hour exceed, less hour, increase speed
+                left = mid + 1
+            else:
+                right = mid - 1
+        return left
+            
+
