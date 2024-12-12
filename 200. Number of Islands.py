@@ -19,7 +19,7 @@ class Solution:
             nx = i + x
             ny = j + y
             # explore all 4 direction and change all 1 to 0
-            if self.check_bound(grid, nx, ny):
+            if self.check_bound(grid, nx, ny) and grid[nx][ny] != "1":
                 self.dfs(grid, nx, ny)
 
         

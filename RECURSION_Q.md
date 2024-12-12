@@ -18,6 +18,7 @@
 
 
 ### BFS
+490. The Maze
 994. Rotting Oranges
 207. Course Schedule
 210. Course Schedule II

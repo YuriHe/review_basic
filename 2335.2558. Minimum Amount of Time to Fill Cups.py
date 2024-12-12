@@ -42,9 +42,20 @@ def fillCups(self, amount: List[int]) -> int:
     TIME: nlogn SPACE: n
 '''
 def pickGifts(self, gifts: List[int], k: int) -> int:
+    # SOLUTION1: brute force
+    while k > 0:
+            curMax = max(gifts)
+            gifts.remove(curMax) # remove first one
+            # choose max
+            newV = math.floor(math.sqrt(curMax))
+            gifts.append(newV)
+            k-=1
+        return sum(gifts)
+    
+    # SOLUTION2: heap
     max_heap = [-v for v in gifts]
     heapq.heapify(max_heap)
-    while -max_heap[0] > math.floor(math.sqrt(-max_heap[0])) and k > 0:
+    while k > 0:
         max1 = -heapq.heappop(max_heap)
         left = math.floor(math.sqrt(max1))
         heapq.heappush(max_heap, -left)

@@ -13,23 +13,22 @@ class Solution:
     q store layer's nodes
     """
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # 1SOLUTION: Queue bfs
         if root is None: return []
         q = collections.deque([root])
         res = []
-        while len(q) > 0:
+        while q:
             inner = []
-            # define size first, otherwise size will change
             size = len(q)
-            while size > 0:
+            for _ in range(size):
                 first = q.popleft()
                 inner.append(first.val)
-                if first.left: 
+
+                if first.left:
                     q.append(first.left)
                 if first.right:
                     q.append(first.right)
-                
-                size -= 1
-            # done one level
+
             res.append(inner)
 
         return res

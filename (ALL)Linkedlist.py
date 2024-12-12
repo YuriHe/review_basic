@@ -26,6 +26,38 @@ class Solution:
 
 class Solution:
     """
+    142. Linked List Cycle II
+    Check if there is cycle two pointer
+    1. finding cycle:
+    slow:a
+    fast:a+b+c
+    meet: confirm this is loop
+    If intersection is one node
+    fast run a+(b+c)+b
+    slow run a+b 
+    fast_distance=2*slow_distance
+    a=c
+    2.after meet, fast and slow at same speed until meet again
+    """
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head:return head
+        fast=head
+        slow=head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if fast == slow: # meet first time, confirm this loop
+                # restart from head, and run
+                fast = head
+                while fast != slow:
+                    fast = fast.next
+                    slow = slow.next
+                return slow
+        return None
+
+
+class Solution:
+    """
     21. Merge Two Sorted Lists
     Question: merge two sorted list and create linkedlist
     1.Create dummy linkedlist, dummy= ListNode(-1), cur =dummy, head will be cur.next

@@ -69,6 +69,7 @@ while right < arr:
 
 3. Longest Substring Without Repeating Characters
 209. Minimum Size Subarray Sum
+340. Longest Substring with At Most K Distinct Characters
 424. Longest Repeating Character Replacement
 643. Maximum Average Subarray I
 1004. Max Consecutive Ones III  1493. Longest Subarray of 1's After Deleting One Element
@@ -92,6 +93,7 @@ while right < arr:
 148. Sort List
 #### Iterate linkedlist
 141. Linked List Cycle
+142. Linked List Cycle II
 2130. Maximum Twin Sum of a Linked List
 #### Edit linkedlist
 203. Remove Linked List Elements
@@ -105,7 +107,8 @@ while right < arr:
 122. Best Time to Buy and Sell Stock II
 
 
-
+### 相向
+16. 3Sum Closest
 
 
 

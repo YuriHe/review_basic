@@ -6,6 +6,7 @@ class Solution:
     ABAB, right = 3, right - left + 1 = 4 - max(char) <= k: valid window
     """
     def characterReplacement(self, s: str, k: int) -> int:
+        # SOLUTION1 slide window O(n)
         count = [0] * 26
         left,right = 0, 0
         res = 0
@@ -26,6 +27,7 @@ class Solution:
             res = max(res, right - left + 1)
             right += 1
         return res
+
 
 
 
