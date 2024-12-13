@@ -9,6 +9,7 @@ Return is returning cur node situation
 222. Count Complete Tree Nodes
 236. Lowest Common Ancestor of a Binary Tree
 257. Binary Tree Paths
+297. Serialize and Deserialize Binary Tree
 404. Sum of Left Leaves
 543. Diameter of Binary Tree
 872. Leaf-Similar Trees

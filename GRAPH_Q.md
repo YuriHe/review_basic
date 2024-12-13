@@ -65,6 +65,7 @@ Time: O(E+V) or O(ElogV)
 
 ### Dijkstra's algorithm 
 shortest path - greedy BFS - heap - T:O(ElogV)
+499. The Maze ||
 1514. Path with Maximum Probability (maxheap)
 
 
