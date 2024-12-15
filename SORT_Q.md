@@ -20,6 +20,7 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 2462. Total Cost to Hire K Workers
 #### Max-heap
 373. Find K Pairs with Smallest Sums
+1792. Maximum Average Pass Ratio
 
 
 ### Array sort

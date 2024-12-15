@@ -9,8 +9,13 @@
 36. Valid Sudoku
 48. Rotate Image
 54. Spiral Matrix
+169. Majority Element
+217. Contains Duplicate
 271. Encode and Decode Strings
+350. Intersection of Two Arrays II
 380. Insert Delete GetRandom O(1)
+414. Third Maximum Number
+448. Find All Numbers Disappeared in an Array
 3152. Special Array II
 
 
@@ -41,14 +46,12 @@
 
 
 
-169. Majority Element
-217. Contains Duplicate
 228. Summary Ranges
 645. Set Mismatch
 ### 1D
 128. Longest Consecutive Sequence
 442. Find All Duplicates in an Array
-448. Find All Numbers Disappeared in an Array
+
 581. Shortest Unsorted Continuous Subarray
 771. Jewels and Stones
 
