@@ -20,7 +20,10 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 2462. Total Cost to Hire K Workers
 #### Max-heap
 373. Find K Pairs with Smallest Sums
+506. Relative Ranks
+1046. Last Stone Weight
 1792. Maximum Average Pass Ratio
+2182. Construct String With Repeat Limit
 
 
 ### Array sort
@@ -60,9 +63,9 @@ Selection sort: Not Stable | T: O(n^2) | find minV, swap with cur, keep [: minIn
 
 #### Max Heap
 451. Sort Characters By Frequency
-506. Relative Ranks
+
 973. K Closest Points to Origin
-1046. Last Stone Weight
+
 
 
 1464. Maximum Product of Two Elements in an Array

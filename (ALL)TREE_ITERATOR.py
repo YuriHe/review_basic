@@ -26,23 +26,3 @@ def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
                 cur = cur.left
     return res
                 
-
-"""
-144. Binary Tree Preorder Traversal
-Use stack
-push root, right, then left
-"""
-def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-    if not root:
-        return []
-    stack = [root]
-    res = []
-    while len(stack) > 0:
-        cur = stack.pop()
-        res.append(cur.val)
-        if cur.right:
-            stack.append(cur.right)
-        if cur.left:
-            stack.append(cur.left)
-    return res
-        

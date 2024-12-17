@@ -4,22 +4,22 @@
     If need find largest.. use maxheap
 """
 def findRelativeRanks(self, score: List[int]) -> List[str]:
-    res = [None] * len(score)
-    # create list store (score, index)
-    pq = [(-num, index) for index, num in enumerate(score)]
-    # max heapify, BUT NOT MEAN heap sorted!!
-    heapq.heapify(pq)
-    count = 0
-    while len(pq) > 0: # each time heappop, will heapify again 
-        num, rank = heapq.heappop(pq)
-        if count == 0:
-            res[rank]= "Gold Medal"
-        elif count == 1:
-            res[rank] = "Silver Medal"
-        elif count == 2:
-            res[rank] = "Bronze Medal"
+    res = [0] * len(score)
+    heap = [(-v, i) for i, v in enumerate(score)]
+    heapq.heapify(heap)
+    
+    rank = 0
+    while heap:
+        num, idx = heapq.heappop(heap)
+        if rank == 0:
+            res[idx]= "Gold Medal"
+        elif rank == 1:
+            res[idx] = "Silver Medal"
+        elif rank == 2:
+            res[idx] = "Bronze Medal"
         else:
-            res[rank] = str(count+1)
-        count += 1
+            res[idx] = str(rank+1)
+        rank += 1
+
     return res
     

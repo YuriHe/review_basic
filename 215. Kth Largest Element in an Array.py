@@ -35,7 +35,7 @@ def findKthLargest(self, nums: List[int], k: int) -> int:
 
     return heap[0]
 
-    # better keep k size O(nlogk)
+    # or keep k size O(nlogk)
     heap = []
     for n in nums:
         heapq.heappush(heap, n)

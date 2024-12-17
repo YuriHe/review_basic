@@ -5,11 +5,14 @@ class Solution:
     TOPIC: find 2 largest element -> maxheap(not default)
     """
     def lastStoneWeight(self, stones: List[int]) -> int:
-        max_heap = [-stone for stone in stones]
-        while len(max_heap) > 1:
-            heapq.heapify(max_heap)
-            if len(max_heap) >= 2:
-                l1 = heapq.heappop(max_heap)
-                l2 = heapq.heappop(max_heap)
-                heapq.heappush(max_heap, -abs(l1-l2))
-        return -max_heap[0] if len(max_heap) == 1 else 0
+        heap = [-n for n in stones]
+        heapq.heapify(heap)
+
+        while len(heap) > 1:
+            # at least 2 ele in heap
+            first = -heapq.heappop(heap)
+            second = -heapq.heappop(heap)
+            if first != second:
+                heapq.heappush(heap, -abs(second-first))
+
+        return 0 if len(heap) == 0 else -heap[0]
