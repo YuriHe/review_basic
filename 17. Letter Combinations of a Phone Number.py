@@ -2,9 +2,13 @@ class Solution:
     """
     Question: Combination - backtracking find k slot
     4 ^n(digit length)
+    digits="23" 2:abc 3:def
+    n=2,k=3
+    number of combination is 3*3=3^2
+    time&spaceis k^n
     """
     def letterCombinations(self, digits: str) -> List[str]:
-        if not digits or len(digits) == 0: return []
+        if not digits: return []
         # define digit-letters mapping {2:"abc"}
         phone = { 
             "2" : "abc",

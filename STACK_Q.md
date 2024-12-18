@@ -10,6 +10,7 @@
 150. Evaluate Reverse Polish Notation
 155. Min Stack
 735. Asteroid Collision
+1475. Final Prices With a Special Discount in a Shop
 
 
 ### Monotonic stack
