@@ -18,6 +18,10 @@ Return is returning cur node situation
 1448. Count Good Nodes in Binary Tree
 
 
+### Iterative traverse
+589. N-ary Tree Preorder Traversal
+
+
 ### BFS
 102. Binary Tree Level Order Traversal
 103. Binary Tree Zigzag Level Order Traversal
