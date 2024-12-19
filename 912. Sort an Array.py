@@ -9,30 +9,63 @@ Partition the Array: Rearrange the array around the pivot. After partitioning, a
 and all elements greater than the pivot will be on its right. 
 The pivot is then in its correct position, and we obtain the index of the pivot.
 """
-def sortArray(self, nums: List[int]) -> List[int]:
-    def divide(A, low, high):
-        if low >= high: return
-        p = partition(A, low, high)
-        divide(A, low, p-1), 
-        divide(A, p + 1, high)
-    
-    def partition(A, low, high):
-        # swap median with pivot
-        mid = (low + high) // 2
-        A[high], A[mid] = A[mid], A[high]
-        i = low - 1
-
-        for j in range(low, high):
-            if A[j] < A[high]: 
-                i = i + 1
-                A[i], A[j] = A[j], A[i]
-                
-        A[high], A[i+1] = A[i+1], A[high]
-        return i + 1
-    
-    divide(nums,0,len(nums) - 1)
+# Standard quicksort
+def sortArray(self, nums: List[int]) -> List[int]:    
+    self.helper(nums,0,len(nums) - 1)
     return nums
+def helper(self, nums, left, right):
+        if left >= right: return 
+        pivot = self.partition(nums, left, right)
+        self.helper(nums, left, pivot-1)
+        self.helper(nums,pivot+1, right)
+def partition(self, nums, left, right):
+    pivot = nums[right]
+    wall = left
+    for i in range(left, right, 1):
+        if nums[i] < pivot:
+            nums[wall], nums[i] = nums[i], nums[wall]
+            wall += 1
+    nums[wall], nums[right] = nums[right], nums[wall]
+    return wall
 
+import random
+
+# passed three-way quicksort
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        self.shuffle(nums)  # Shuffle the array to avoid worst-case scenarios
+        self.helper(nums, 0, len(nums) - 1)
+        return nums
+
+    def shuffle(self, nums):
+        n = len(nums)
+        for i in range(n - 1, 0, -1):
+            j = random.randint(0, i)
+            nums[i], nums[j] = nums[j], nums[i]
+
+    def helper(self, nums, left, right):
+        if left >= right:
+            return
+        lt, gt = self.partition(nums, left, right)
+        self.helper(nums, left, lt - 1)  # Sort elements less than the pivot
+        self.helper(nums, gt + 1, right)  # Sort elements greater than the pivot
+
+    def partition(self, nums, left, right):
+        pivot = nums[right]  # Use the last element as the pivot
+        lt = left  # Marks the boundary for elements less than pivot
+        gt = right  # Marks the boundary for elements greater than pivot
+        i = left
+        while i <= gt:
+            if nums[i] < pivot:
+                nums[lt], nums[i] = nums[i], nums[lt]
+                lt += 1
+                i += 1
+            elif nums[i] > pivot:
+                nums[gt], nums[i] = nums[i], nums[gt]
+                gt -= 1
+            else:
+                i += 1
+        return lt, gt
 """
 2. Bubble sort TLE
 compare adjacent, swap adjacent, last one is always largest after one round sort

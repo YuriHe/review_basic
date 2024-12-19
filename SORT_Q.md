@@ -7,6 +7,8 @@ Sort start or end, if merge all overlap sort start.
 435. Non-overlapping Intervals
 452. Minimum Number of Arrows to Burst Balloons
 986. Interval List Intersections
+1272. Remove Interval
+1288. Remove Covered Intervals
 2054. Two Best Non-Overlapping Events
 
 
@@ -32,8 +34,13 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 
 
 ### Merge sort
+23. Merge k Sorted Lists
 88. Merge Sorted Array
 1768. Merge Strings Alternately
+
+
+### Bucket Sort 
+451. Sort Characters By Frequency
 
 
 ### Quick sort
@@ -60,14 +67,7 @@ Selection sort: Not Stable | T: O(n^2) | find minV, swap with cur, keep [: minIn
 
 
 703. Kth Largest Element in a Stream
-
-#### Max Heap
-451. Sort Characters By Frequency
-
 973. K Closest Points to Origin
-
-
-
 1464. Maximum Product of Two Elements in an Array
 2335. Minimum Amount of Time to Fill Cups
 2558. Take Gifts From the Richest Pile
