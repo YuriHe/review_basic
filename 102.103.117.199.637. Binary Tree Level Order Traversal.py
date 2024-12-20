@@ -48,21 +48,18 @@ class Solution:
         q = deque([root])
         while len(q) > 0:
             size = len(q) # represent this layer
-            size_2 = size
-            total = 0
+            tmpsum = 0
             
-            # store next layer 
-            while size > 0:
+            for _ in range(size):
                 first = q.popleft()
-                total += first.val
+                tmpsum += first.val
                 if first.left:
                     q.append(first.left)
                 if first.right:
                     q.append(first.right)
-                size -= 1
             
             # finish this layer pop+push, now count average
-            res.append(total/size_2)
+            res.append(tmpsum/size)
         return res
 
 class Solution:
@@ -72,22 +69,21 @@ class Solution:
     BFS, return last value in each layer
     """
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if not root: return [] # it is required!
-        res = []
+        if not root: return []
         q = deque([root])
-        while len(q) > 0:
+        res = []
+
+        while q:
             size = len(q)
-            last = q[size-1]
-            res.append(last.val) # last value from each layer
-            while size > 0:
+            res.append(q[-1].val)
+
+            for _ in range(size):
                 first = q.popleft()
                 if first.left:
                     q.append(first.left)
                 if first.right:
                     q.append(first.right)
-                size -= 1
         return res
-
 
 class Solution:
     """
@@ -103,14 +99,16 @@ class Solution:
 
         while len(q) > 0:
             size = len(q)
-            i, j, inner = 0, size-1, []
+            inner = []
             # retrieve this level 
             if is_left:
+                i = 0
                 while i < size:
                     inner.append(q[i].val)
                     i += 1
                 is_left = False
             else:
+                j = size-1
                 while j >= 0:
                     inner.append(q[j].val)
                     j -= 1
@@ -125,6 +123,7 @@ class Solution:
                 size -= 1
             res.append(inner)
         return res
+
 
 
 """
@@ -144,22 +143,21 @@ class Solution:
     return the modify tree which add next right pointer
     """
     def connect(self, root: 'Node') -> 'Node':
-        if not root: return None
+        if not root: return root
 
         q = deque([root])
-        while len(q) > 0:
-            size, i = len(q), 0
-            while i < size-1:
-                q[i].next = q[i+1]
-                i += 1
-            q[i].next = None # rightmost
-
-            while size > 0:
+        while q:
+            size = len(q)
+            for i in range(size-1):
+                if i < size-1 :
+                    q[i].next = q[i+1] 
+            # last index
+            q[-1].next = None
+            
+            for i in range(size):
                 cur = q.popleft()
                 if cur.left:
                     q.append(cur.left)
                 if cur.right:
                     q.append(cur.right)
-                size -=1
         return root
-
