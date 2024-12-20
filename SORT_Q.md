@@ -3,11 +3,14 @@ Sort start or end, if merge all overlap sort start.
    
 56. Merge Intervals
 57. Insert Interval
+218. The Skyline Problem
 252. Meeting Rooms
 435. Non-overlapping Intervals
 452. Minimum Number of Arrows to Burst Balloons
+759. Employee Free Time
 986. Interval List Intersections
 1272. Remove Interval
+1229. Meeting Scheduler
 1288. Remove Covered Intervals
 2054. Two Best Non-Overlapping Events
 
