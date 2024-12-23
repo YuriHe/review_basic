@@ -69,6 +69,7 @@ class Solution:
 
 """
 Best!
+207. Course Schedule
 Use BFS + hashmap
 hashmap store {preq: [next classes]} -> save time iterate whole preprequisite when nested loop
 list store cur's preq count: indegree[cur] += 1

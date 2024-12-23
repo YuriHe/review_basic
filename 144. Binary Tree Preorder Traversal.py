@@ -14,17 +14,17 @@ class Solution:
     """
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         # 1. Recursion Way
-        # res = []
+        res = []
 
-        # def rec(node):
-        #     # base case
-        #     if not node: return 
-        #     res.append(node.val)
-        #     rec(node.left)
-        #     rec(node.right)
+        def rec(node):
+            # base case
+            if not node: return 
+            res.append(node.val)
+            rec(node.left)
+            rec(node.right)
 
-        # rec(root)
-        # return res
+        rec(root)
+        return res
 
         # 2. Iterative Way
         if not root: return []

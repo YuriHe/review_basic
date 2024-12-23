@@ -30,6 +30,7 @@ Return is returning cur node situation
 637. Average of Levels in Binary Tree
 1161. Maximum Level Sum of a Binary Tree
 2415. Reverse Odd Levels of Binary Tree
+2471. Minimum Number of Operations to Sort a Binary Tree by Level
 2583. Kth Largest Sum in a Binary Tree  &Minheap
 
 
