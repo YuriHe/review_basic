@@ -8,6 +8,7 @@
 ### Backtracking
 17. Letter Combinations of a Phone Number
 22. Generate Parentheses
+37. Sudoku Solver
 46. Permutations
 77. Combinations
 78. Subsets
