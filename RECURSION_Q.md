@@ -10,6 +10,7 @@
 22. Generate Parentheses
 37. Sudoku Solver
 46. Permutations
+51. N-Queens
 77. Combinations
 78. Subsets
 216. Combination Sum III
