@@ -46,6 +46,8 @@ while left<right:
 704. Binary Search
 875. Koko Eating Bananas
 1011. Capacity To Ship Packages Within D Days
+1482. Minimum Number of Days to Make m Bouquets
+1552. Magnetic Force Between Two Balls
 1760. Minimum Limit of Balls in a Bag
 2141. Maximum Running Time of N Computers
 

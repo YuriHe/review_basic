@@ -23,6 +23,10 @@ Ask if can get result from combination
 choices + optimal substructure + overlap subproblems
 
 
+### DP variable
+1014. Best Sightseeing Pair
+
+
 ### DP 1D
 70. Climbing Stairs
 198. House Robber
