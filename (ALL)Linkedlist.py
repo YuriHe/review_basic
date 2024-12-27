@@ -79,15 +79,7 @@ class Solution:
                 list2 = list2.next
             cur = cur.next
         
-        while list1:
-            cur.next = list1
-            cur = cur.next
-            list1 = list1.next
-        
-        while list2:
-            cur.next = list2
-            cur = cur.next
-            list2 = list2.next
+        cur.next = list1 if list1 else list2
         
         return dummy.next # return head of linkedlist, not running point:cur
 
