@@ -28,7 +28,7 @@ def findKthLargest(self, nums: List[int], k: int) -> int:
     # store all nums to heap list and heapify
     # pop the heap k times
     # T: O(nlogn)
-    heap = [n for n in nums]
+    heap = [n for n in nums] # or nums.copy()
     heapq.heapify(heap)
     while len(heap) > k:
         heapq.heappop(heap)
