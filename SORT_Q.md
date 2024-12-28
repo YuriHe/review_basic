@@ -39,6 +39,7 @@ Max-Heap: Largest element at the root; parent nodes are larger than their childr
 ### Merge sort
 23. Merge k Sorted Lists
 88. Merge Sorted Array
+493. Reverse Pairs
 1768. Merge Strings Alternately
 
 

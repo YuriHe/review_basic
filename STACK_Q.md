@@ -15,5 +15,8 @@
 
 ### Monotonic stack
 Ask consecutive increasing/decreasing number
+316. Remove Duplicate Letters
+402. Remove K Digits
+496. Next Greater Element I
 739. Daily Temperatures
 901. Online Stock Span

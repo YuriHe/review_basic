@@ -1,4 +1,9 @@
 # https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/#
+"""
+Tn = 2T(n/2) + (O(n) +nlogn + O(n))
+Master theory
+Tn = n logn logn
+"""
 import math
 
 class Point:
@@ -10,7 +15,7 @@ def dist(p1, p2):
 	return math.sqrt((p1.x - p2.x)**2 + (p1.y - p2.y)**2)
 
 
-def divide(pointers, left, right):
+def divide(pointers, left, right): # logn
     cur_min_dis = float('inf')
     if left == right: # same pointer
         return cur_min_dis
