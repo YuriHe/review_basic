@@ -15,6 +15,7 @@
 
 ### Monotonic stack
 Ask consecutive increasing/decreasing number
+84. Largest Rectangle in Histogram
 316. Remove Duplicate Letters
 402. Remove K Digits
 496. Next Greater Element I
