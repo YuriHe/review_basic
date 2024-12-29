@@ -7,6 +7,7 @@ class Solution:
     3.return max length of substring: r-l+1
     """
     def lengthOfLongestSubstring(self, s: str) -> int:
+        # 3SOLUTION
         if len(s) == 0: return 0
         # create arr to store char's freq
         seen = [0] * 256
@@ -33,3 +34,37 @@ class Solution:
         
         return res
 
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # 1SOLUTION: hashmap, move left one by one
+        # create hashmap store{char: ctn} within window
+        hashmap = collections.defaultdict(int)
+        res = 0
+        # same direction two pointers
+        left, right = 0, 0
+        while right < len(s):
+            # invalid window exit duplicate inside of window
+            if s[right] in hashmap:
+                left = max(hashmap[s[right]], left)
+            # update hashmap index
+            hashmap[s[right]] = right+1
+            # valid 
+            res = max(res, right-left + 1)
+            right += 1
+        return res
+        # 2SOLUTION:hashset (best)
+        visit = set()
+        left=0
+        res = 0
+        for right in range(len(s)):
+            c = s[right]
+            # 1.出 check window and move left
+            while c in visit:
+                visit.remove(s[left])
+                left += 1
+            # 2.进 update
+            visit.add(c)
+            # 3.算 res
+            res = max(res, right-left+1)
+
+        return res

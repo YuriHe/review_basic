@@ -71,6 +71,7 @@ while right < arr:
     # update valid res
 
 3. Longest Substring Without Repeating Characters
+76. Minimum Window Substring
 209. Minimum Size Subarray Sum
 340. Longest Substring with At Most K Distinct Characters
 424. Longest Repeating Character Replacement
