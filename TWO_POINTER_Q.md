@@ -74,9 +74,11 @@ while right < arr:
 76. Minimum Window Substring
 209. Minimum Size Subarray Sum
 340. Longest Substring with At Most K Distinct Characters
+395. Longest Substring with At Least K Repeating Characters
 424. Longest Repeating Character Replacement
 643. Maximum Average Subarray I
 1004. Max Consecutive Ones III  1493. Longest Subarray of 1's After Deleting One Element
+1248. Count Number of Nice Subarrays
 1456. Maximum Number of Vowels in a Substring of Given Length
 2405. Optimal Partition of String
 2779. Maximum Beauty of an Array After Applying Operation
