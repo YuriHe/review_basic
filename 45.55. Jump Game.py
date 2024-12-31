@@ -4,41 +4,42 @@
     Greedy algorithm
 """
 def canJump(self, nums: List[int]) -> bool:
+    # value in array represent max jump length
+    # only farther reach, no need dp array
     far = 0
     for i in range(len(nums)):
-        if far >= len(nums) - 1: return True
-        far = max(far, nums[i]+i)
-        if nums[i] == 0 and far <= i:
+        # Must here
+        if far < i: # farthest still less than i
             return False
-    return False
+        far = max(far, i + nums[i])
+        if far >= len(nums)-1:
+            return True
+    return False            
+
     
 """
     45. Jump Game II
     Question: Minimum number of jumps to reach last index 
-    Think BFS, layer by layer, here is section(include right border)
+    Think Greedy
     Each jump will have rightmost border, hit border, need more jumps
     Greedy
     T: O(n)
     S: O(1)
 """
 def jump(self, nums: List[int]) -> int:
-    total = 0 # minimum jmps
-    r = 0 # cur right border of jump
-    far = 0 # farthest position from cur jump
-
-    for i in range(len(nums)-1): # last second end jump, last is dest
-        # update farthest point that can be reached from cur position
+    if len(nums) <= 1: 
+        # no jump
+        return 0
+    # cur_end is right border of jump
+    # far is currently far reach
+    total, cur_end, far = 0,0,0
+    for i in range(len(nums)):
         far = max(far, nums[i] + i)
-
-        if i == r: # reach right border, need 1 jump
-            total += 1
-            # update new right border
-            r = far
-
-            # check if right border reach end
-            if r >= len(nums) - 1:
-                break
-    
+        if i == cur_end: # reach right border need one more jump, update right border
+            total+=1
+            cur_end = far 
+        if cur_end >= len(nums)-1: # exit earlier
+            break
     return total
 
 

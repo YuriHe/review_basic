@@ -38,6 +38,7 @@ start from base case
 300. Longest Increasing Subsequence
 322. Coin Change
 1137. N-th Tribonacci Number
+2466. Count Ways To Build Good Strings
 ### DP top-down memorization/recursion
 63. Unique Paths II (dfs memo)
 494. Target Sum

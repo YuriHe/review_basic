@@ -18,6 +18,7 @@
 
 ### DFS
 690. Employee Importance
+1306. Jump Game III
 
 
 ### BFS
