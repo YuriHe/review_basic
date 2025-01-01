@@ -29,6 +29,7 @@
 408. Valid Word Abbreviation
 806. Number of Lines To Write String
 824. Goat Latin
+1422. Maximum Score After Splitting a String
 
 
 ### Handle Substring

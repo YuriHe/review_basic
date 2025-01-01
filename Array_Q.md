@@ -1,7 +1,9 @@
 ### Prefix & suffix
 238. Product of Array Except Self
+523. Continuous Subarray Sum
 560. Subarray Sum Equals K
 724. Find Pivot Index
+974. Subarray Sums Divisible by K
 1732. Find the Highest Altitude
 
 
