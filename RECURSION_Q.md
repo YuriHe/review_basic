@@ -15,6 +15,8 @@
 77. Combinations
 78. Subsets
 216. Combination Sum III
+1723. Find Minimum Time to Finish All Jobs
+1986. Minimum Number of Work Sessions to Finish the Tasks
 
 
 ### DFS
