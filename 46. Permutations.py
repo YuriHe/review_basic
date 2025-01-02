@@ -13,22 +13,21 @@
 """
 def permute(self, nums: List[int]) -> List[List[int]]:
     res = []
-    visited = [False] * len(nums)
-    cur = [] # push/pop 
-    def helper(index):
-        # base case
-        if len(cur) == len(nums):
-            # done one round permutation, copy cur list
-            res.append(cur[:])
-            return
-        for i in range(len(nums)):
-            if visited[i]:
-                continue # picked
-            visited[i] = True
-            cur.append(nums[i])
-            helper(index+1)
-            cur.pop() # use pop instead of remove
-            visited[i] = False
-    helper(0) # remember call recursion
+    visit = [False] * len(nums)
 
+    def bt(inner):
+        if len(inner) == len(nums):
+            res.append(inner[:])
+            return 
+
+        for i in range(len(nums)):
+            if visit[i]:
+                continue
+            visit[i] = True
+            inner.append(nums[i])
+            bt(inner)
+            inner.pop()
+            visit[i] = False
+
+    bt([])
     return res
