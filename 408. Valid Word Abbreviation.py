@@ -15,6 +15,10 @@ class Solution:
     @param abbr: an abbreviation
     @return: true if string matches with the given abbr or false
     """
+"""
+Question: verify if abbreviation string of word string
+Step1:two pt track both,handle digits of abrr
+"""
     def valid_word_abbreviation(self, word: str, abbr: str) -> bool:
         # write your code here
         if len(word) < len(abbr): return False

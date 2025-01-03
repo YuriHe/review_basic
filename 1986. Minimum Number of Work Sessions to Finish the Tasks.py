@@ -18,15 +18,19 @@ def minSessions(tasks,sessionTime):
         # base case
         if task_id == len(tasks):
             res = min(res, ctn)
+            print(f"ctn: {ctn}")
+            print(f"Updated res: {res}")
             return
         # iterate session if exit then reuse it
         for i in range(ctn):
             if sessions[i]+ tasks[task_id] <= sessionTime:
+                print(f"Assign task {task_id} to session {i}")
                 sessions[i] += tasks[task_id]
                 dfs(task_id+1, ctn)
                 sessions[i] -= tasks[task_id]
         
         # create new session
+        print(f"Create new session for task {task_id}")
         sessions[ctn] += tasks[task_id]
         dfs(task_id+1, ctn+1)
         sessions[ctn] -= tasks[task_id]
@@ -38,4 +42,4 @@ def minSessions(tasks,sessionTime):
 # 2.res求最小值，过程超过res，return
 # 3.跳出duplicate，比如duplicate load
 
-print(minSessions([4,4,4], 6))
+print(minSessions([4,4,2], 6))

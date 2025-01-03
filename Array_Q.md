@@ -6,11 +6,13 @@
 724. Find Pivot Index
 974. Subarray Sums Divisible by K
 1732. Find the Highest Altitude
+2270. Number of Ways to Split Array
 
 
 ### Prefix & Range sum
 304. Range Sum Query 2D - Immutable
 370. Range Addition
+2559. Count Vowel Strings in Ranges
 
 
 ### Handle Index value

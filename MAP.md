@@ -1,5 +1,6 @@
 ### Handle map+array
 146. LRU Cache
+1570. dot product of two sparse vectors
 
 
 ### hashmap + set
