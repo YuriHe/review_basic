@@ -11,26 +11,29 @@ class Solution:
         for _ in range(n):
             power = power * x
         return power if sign == 1 else 1 / power
-        # 2SOLUTION Divide and conquer logn
+        # 2SOLUTION Recursion Best
         # divide problem to subproblem, conquer handle base case, merged to result
         # x^n= x^n/2 * x^n/2 when n is even
         # x^n= x^(n+1)/2 * x^(n-1)/2 when n is odd
-        def pow(y, m):
-            if m == 0:
-                return 1
-            half = pow(y, m//2)
-            if m % 2 == 0:
-                return half * half
+        def myPow(self, x: float, n: int) -> float:
+            # recursion
+            def rec(x, m):
+                # base case 
+                if m == 0:
+                    return 1
+                if m == 1:
+                    return x
+                half = rec(x, m//2)
+                if m % 2 == 0:
+                    return half * half
+                else:
+                    return half * half * x
+                    
+            if n < 0:
+                return 1/rec(x,-n)
             else:
-                return half*half*y
+                return rec(x, n)
 
-        # base case
-        if x == 0 or n == 1: 
-            return x
-        if n < 0:
-            return 1/pow(x, -n)
-        # recursion
-        # return pow(x, n)
         # 3SOLUTION: BIT logn
         """
         x=2,n=13(1101)

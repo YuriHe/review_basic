@@ -2,6 +2,7 @@
 45. Jump Game II
 55. Jump Game
 605. Can Place Flowers
+1710. Maximum Units on a Truck
 
 
 ### Template
@@ -54,6 +55,7 @@ start from base case
 #### memorization
 def dfs return memo[i][j]
 72. Edit Distance
+91. Decode Ways
 
 
 ### Tricky DP
