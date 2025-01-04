@@ -42,6 +42,8 @@ start from base case
 ### DP top-down memorization/recursion
 63. Unique Paths II (dfs memo)
 494. Target Sum
+887. Super Egg Drop
+1884. Egg Drop With 2 Eggs and N Floors
 
 
 ### DP 2D

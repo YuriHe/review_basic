@@ -21,3 +21,28 @@ class Solution:
 
         helper("", n, n)
         return res
+
+def generateParenthesis(n):
+    def rec(ope, close, inner):
+        print(ope, " ", close, " ", inner)
+        if close > ope:
+            return
+        if close == n and ope == n:
+            res.append("".join(inner[:]))
+            return
+        if ope < n:
+            inner.append("(")
+            rec(ope+1, close, inner)
+            print("open: ", ope, " pop", "close: ", close)
+            inner.pop()
+
+        if close < n:
+            inner.append(")")
+            rec(ope, close+1, inner)
+            print("open: ", ope, " pop", "close: ", close)
+            inner.pop()
+
+    res = []
+    rec(0, 0, [])
+    return res
+generateParenthesis(3)
