@@ -3,6 +3,7 @@
 125. Valid Palindrome
 266. Palindrome Permutation
 409. Longest Palindrome
+1328. Break a Palindrome
 1930. Unique Length-3 Palindromic Subsequences
 
 

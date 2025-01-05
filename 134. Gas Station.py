@@ -6,18 +6,40 @@ class Solution:
     no need to handle if travel whole circuit or track i+k % n because 1.2.
     """
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
-        total_gas = sum(gas)
-        total_cost = sum(cost)
+        # 1 SOLUTION: brute force TLE
+        find possible start point among many and loop from start-end where end
+        prefind gas[i] >= cost[i] put the list
+        if tank=0 for cur index still can go to next station which have gas
+        possible = []
+        for i in range(len(gas)):
+            if gas[i] >= cost[i]:
+                possible.append(i)
+        
+        for i in range(len(possible)):
+            tank = 0
+            start = possible[i]
+            # Start from the current start point
+            tank += gas[start] - cost[start]
+            for j in range(start+1, start+len(gas)):
+                cur = j % len(gas)
+                tank += gas[cur] - cost[cur]
+
+                if tank < 0:
+                    break
+                        # find another start
+            if tank >= 0:
+                return start
+        return -1
+        # 2SOLUTION: greedy
+        if sum(gas) < sum(cost): return -1
+        # start point starting from 0
         start = 0
         tank = 0
-
         for i in range(len(gas)):
             tank += gas[i] - cost[i]
             if tank < 0:
-                # reset start
+                # rest tank
                 tank = 0
+                # find next start point
                 start = i+1
-
-        if total_gas < total_cost:
-            return -1
         return start

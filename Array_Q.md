@@ -7,6 +7,7 @@
 974. Subarray Sums Divisible by K
 1732. Find the Highest Altitude
 2270. Number of Ways to Split Array
+2381. Shifting Letters II
 
 
 ### Prefix & Range sum
