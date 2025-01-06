@@ -6,6 +6,7 @@
 724. Find Pivot Index
 974. Subarray Sums Divisible by K
 1732. Find the Highest Altitude
+1769. Minimum Number of Operations to Move All Balls to Each Box
 2270. Number of Ways to Split Array
 2381. Shifting Letters II
 
