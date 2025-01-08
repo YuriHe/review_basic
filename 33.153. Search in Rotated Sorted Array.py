@@ -10,13 +10,15 @@ class Solution:
             mid = (low+high) // 2
             if nums[mid] == target:
                 return mid
-            elif nums[low] <= nums[mid]: # this part is sorted
+            # left part is sorted, low index can = mid index
+            elif nums[low] <= nums[mid]:
                 if nums[low] <= target and target <= nums[mid]:
                     # shrink rage
                     high = mid - 1
                 else:
                     low = mid + 1
-            else: # across rotate subarray
+            # right part is sorted
+            else:
                 if nums[mid] <= target and target <= nums[high]:
                     low = mid + 1
                 else:
@@ -31,15 +33,12 @@ class Solution:
     compare nums[mid] with nums[right]
     """
     def findMin(self, nums: List[int]) -> int:
-        low, high = 0, len(nums)-1
-        while low < high:
-            mid = (low + high) // 2
-            # cross rotated range, min on the right
-            if nums[mid] > nums[high]: 
-                low = mid + 1
+        left, right = 0, len(nums)-1
+        while left < right:
+            mid = left + (right-left)//2
+            if nums[mid] > nums[right]:
+                # smaller on the right of mid
+                left = mid + 1
             else:
-                # increasing range
-                high = mid
-
-        return nums[low]
-
+                right = mid
+        return nums[right]
