@@ -99,8 +99,46 @@ class WordDictionary:
 
         return dfs(0, cur)
 
-        
+# Best 211       
+from functools import cache
+class TrieNode:
+    def __init__(self):
+        self.children = [None] * 26
+        self.isEnd = False
 
+class WordDictionary:
+
+    def __init__(self):
+        self.root = TrieNode()
+
+    def addWord(self, word: str) -> None:
+        cur = self.root
+        for c in word:
+            idx = ord(c) - ord('a')
+            if not cur.children[idx]:
+                cur.children[idx] = TrieNode()
+            cur = cur.children[idx]
+        cur.isEnd = True
+
+    def search(self, word: str) -> bool:
+        @cache
+        def dfs(node, idx):
+            # Null check
+            if not node: return False
+            # base case
+            if idx == len(word):
+                return node.isEnd
+
+            if word[idx] == ".":
+                for child in node.children:
+                    if dfs(child, idx+1):
+                        return True
+                return False
+            else:
+                # check if this exist
+                index = ord(word[idx]) - ord('a')
+                return dfs(node.children[index], idx+1)
+        return dfs(self.root, 0)
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
