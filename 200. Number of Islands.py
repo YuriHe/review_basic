@@ -1,29 +1,26 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+        def valid(i, j):
+            return 0 <= i < len(grid) and 0 <= j < len(grid[0]) and grid[i][j] == "1"
+
+        def dfs(i, j):
+            dir = [[1,0], [-1, 0], [0, 1], [0, -1]]
+            # base case
+            if not valid(i, j):
+                return
+            # visited
+            grid[i][j] = "0"
+            for x, y in dir:
+                newX = i + x
+                newY = j + y
+                dfs(newX, newY)
+
+        # dfs
+        m,n = len(grid),len(grid[0])
         res = 0
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == "1": # that is part of island, start dfs
-                    self.dfs(grid, i, j)
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    dfs(i, j) # work inside single one island
                     res += 1
         return res
-
-    def dfs(self, grid, i, j) -> None:
-        if grid[i][j] != "1":
-            return
-        # visited
-        grid[i][j] = "0"
-
-        dir = [[1,0], [-1, 0], [0,1], [0, -1]]
-        for x, y in dir:
-            nx = i + x
-            ny = j + y
-            # explore all 4 direction and change all 1 to 0
-            if self.check_bound(grid, nx, ny) and grid[nx][ny] != "1":
-                self.dfs(grid, nx, ny)
-
-        
-    def check_bound(self, grid, i, j):
-        if i >= 0 and j >= 0 and i < len(grid) and j < len(grid[0]):
-            return True
-        return False

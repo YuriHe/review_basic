@@ -129,6 +129,7 @@ class WordDictionary:
             if idx == len(word):
                 return node.isEnd
 
+            # wildcate
             if word[idx] == ".":
                 for child in node.children:
                     if dfs(child, idx+1):
