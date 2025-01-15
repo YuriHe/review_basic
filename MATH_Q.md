@@ -14,6 +14,7 @@ while num> 0: num%10 is last_digit, num //=10
 191. Number of 1 Bits
 268. Missing Number
 338. Counting Bits
+2429. Minimize XOR
 
 
 ### Sum
