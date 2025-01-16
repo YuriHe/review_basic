@@ -15,6 +15,7 @@ while num> 0: num%10 is last_digit, num //=10
 268. Missing Number
 338. Counting Bits
 2429. Minimize XOR
+2425. Bitwise XOR of All Pairings
 
 
 ### Sum
