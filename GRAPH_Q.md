@@ -54,8 +54,13 @@ for nei, weight in adj[cur]:
 ```
 
 399. Evaluate Division
+542. 01 Matrix
 1129. Shortest Path with Alternating Colors
 1376. Time Needed to Inform All Employees (directed tree, no cycle, no visit)
+
+
+#### DFS sending data from bottom to top
+695. Max Area of Island
 
 
 ### What is graph
