@@ -68,6 +68,7 @@ Time: O(E+V) or O(ElogV)
 ### Dijkstra's algorithm 
 shortest path - greedy BFS - heap - T:O(ElogV)
 499. The Maze ||
+1368. Minimum Cost to Make at Least One Valid Path in a Grid
 1514. Path with Maximum Probability (maxheap)
 2290. Minimum Obstacle Removal to Reach Corner
 
