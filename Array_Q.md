@@ -46,6 +46,7 @@
 289. Game of Life
 766. Toeplitz Matrix
 2352. Equal Row and Column Pairs
+2661. First Completely Painted Row or Column
 
 
 ### Kadane's algorithm
