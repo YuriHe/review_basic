@@ -18,6 +18,7 @@ rank=[1]*nodelen
 def find(node): return node. track root of tree and path compression
 def union(n1, n2): return count. update parent and rank 
 
+547. Number of Provinces
 323. Number of Connected Components in an Undirected Graph
 
 
