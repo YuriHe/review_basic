@@ -3,13 +3,15 @@ class Solution:
         """
         1.Solution: Union find(Disjoin Set)
         Idea:Iterate 2D, if connected, try to merge
+        Time:O(n^2+union ConstantTime): iterate 2D n^2, find root parent need O(1) since path compression
+        Space:O(n): parent, rank array
         """
         n = len(isConnected)
         # define parent, default itself
         parent = [i for i in range(n)]
         # define rank, default itself count 1
         rank = [1 for _ in range(n)]
-        def find(n1):
+        def find(n1):#path compression
             # iterate from now to root parent
             cur = n1
             while cur != parent[cur]:# until move to root parent or reach itself
