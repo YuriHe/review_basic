@@ -1,36 +1,29 @@
 class Solution:
-    """
-    @param: strs: a list of strings
-    @return: encodes a list of strings to a single string.
 
-    Simply use delimiter won't work, since str may include any possible characters
-    """
-    def encode(self, strs):
+    def encode(self, strs: List[str]) -> str:
         """
-        Decode logic: 'LengthofWord# + originalWord'  # as delimiter 
+        1.Solution: serialize list of string to string
+        Idea:convert the length of the string into a fixed 4-digit string, (strs[i].length<200)
+        add the string itself, and append it to the result string in sequence.
+        T: O(n)
         """
-        res = ""
-        for word in strs:
-            l = len(word)
-            res += str(l) + "#" + word
-        return res
-
-    """
-    @param: str: A string
-    @return: decodes a single string to a list of strings
-    """
-    def decode(self, str):
         res = []
-        i = 0
-        while i < len(str):
-            j = i # grab encode part
-            while str[j] != "#":
-                j += 1
-            w_l = int(str[i:j])
-            word = str[j+1:j+1+w_l] # careful pointer
-            res.append(word)
-            # update i
-            i = j+1+w_l
-        return res
+        for s in strs:
+            res.append(f"{len(s):4}" + s) # jie. _ _ _3jie
+        return ''.join(res)
 
-        
+    def decode(self, s: str) -> List[str]:
+        """
+        1.Solution: deserialize string to list of string
+        Idea:extra length of string, and move pointer
+        T: O(n)
+        """
+        i, n = 0, len(s)
+        res = []
+        while i < n:
+            size = int(s[i:i+4])
+            i += 4
+            # char at i+4
+            res.append(s[i: i+size])
+            i += size
+        return res
