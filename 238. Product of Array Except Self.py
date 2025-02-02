@@ -1,78 +1,33 @@
 class Solution:
-    """
-    Question: product of array except self, at i, will mulitple all number except num[i]
-    SOLUTION1:brute force O(n^2) TLE
-    SOLUTION2:division O(n)
-    SOLUTION3:array
-    """
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        # SOLUTION 1 Brute force TLE
-        prod = 1
-        res = [0] * len(nums)
-
-        for i in range(len(nums)):
-            prod = 1
-            for j in range(len(nums)):
-                if i == j:
-                    continue
-                else:
-                    prod *= nums[j]
-            res[i] = prod
-        return res
-
-        # SOLUTION2 division 
-        zeroctn, prod = 0, 1
-        res = [0] * len(nums)
-
-        for n in nums:
-            if n == 0:
-                zeroctn += 1
-            else:
-                prod *= n # avoid * 0
-            if zeroctn > 1:
-                return [0] * len(nums) # exit early
-
-        for i in range(len(res)):
-            if zeroctn > 0:
-                if nums[i] == 0:
-                    res[i] = prod
-                else:
-                    res[i] = 0
-            else:
-                res[i] = prod //nums[i]
-        return res
+        """
+        1.Solution: Prefix from left to right and right to left
+        Time: O(n), Space: O(n)
+        """
+        prefix = [1] * len(nums)
+        suffix = [1] * len(nums)
+        for i in range(1, len(nums)):
+            prefix[i] = prefix[i-1] * nums[i-1]
         
-        # SOLUTION3 extra space
-        left = [1] * len(nums) # can avoid zero
-        right = [1] * len(nums)
-        res = [0] * len(nums)
-
-        for i in range(0, len(nums)-1):
-            left[i+1] = left[i] * nums[i]
-        for i in range(len(nums)-1, 0, -1):
-            right[i-1] = right[i] * nums[i]
-        for i in range(len(res)):
-            res[i] = left[i] * right[i]
+        for i in range(len(nums)-2, -1, -1):
+            suffix[i] = suffix[i+1] * nums[i+1]
+        
+        res = [] 
+        for i in range(len(prefix)):
+            res.append(prefix[i] * suffix[i])
         return res
-
-        # SOLUTION4 BEST
-        # avoid use left/right or said prefix suffix array, can use pointer
-        prefix, suffix = 1, 1
-        res = [1] * len(nums)
-
-        # from left to right
-        for i in range(len(nums)):
+        """
+        2.Solution: Prefix from without array memory
+        Time: O(n), Space: O(1)
+        """
+        prefix,suffix = 1, 1
+        res = [1] * len(nums) 
+        for i in range(1, len(nums)):
+            prefix = prefix * nums[i-1]
             res[i] = prefix
-            prefix *= nums[i]
         
-        # from right to left
-        for i in range(len(nums)-1, -1 , -1):
-            res[i] *= suffix
-            suffix *= nums[i]
-
+        for i in range(len(nums)-2, -1, -1):
+            suffix = suffix * nums[i+1]
+            res[i] = res[i+1] * suffix
+        
         return res
-
-
-
-        
-        
