@@ -1,4 +1,5 @@
 class Solution:
+    # 128. Longest Consecutive Sequence
     def longestConsecutive(self, nums: List[int]) -> int:
         """
         1.Solution:set + sorting + two pointer
