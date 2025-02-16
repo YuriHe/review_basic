@@ -84,30 +84,6 @@ class Solution:
         return dummy.next # return head of linkedlist, not running point:cur
 
 
-class Solution:
-    """
-    2095. Delete the Middle Node of a Linked List
-    Question:
-    when fast reach end of list, slow is in middle node
-    prev before slow
-    prev.next = slow.next
-    """
-    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # check head.next is required [1] -> []
-        if not head or not head.next: 
-            return None
-        slow,fast,prev = head, head, None
-
-        while fast and fast.next:
-            # before updating slow pointer
-            prev = slow
-            slow = slow.next
-            fast = fast.next.next
-
-        # delete slow/ middle node by skipping it
-        if prev:
-            prev.next = slow.next
-        return head
 
 
 class Solution:
