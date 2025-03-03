@@ -1,77 +1,57 @@
-"""
-    Question: longest increaseing subsequence(not continuous) of number
-    1. Bottom-up DP
-    two loops for find increasing subsequence at certain range
-    return max(dp), this time, last value of dp is not anwser
-"""
-def lengthOfLIS(self, nums: List[int]) -> int:
-    # 1SOLUTION: bottom-up DP
-    # N^2
-    # create dp array with nums size, default val is 1, since 1 val can be subsequence
-    # at i index will present longest subsequence can get so far
-    dp = [1] * len(nums)
-    # return longest length of subsequence
-    res = 1
-    for i in range(1, len(dp)): # cur index(right)
-        for j in range(0, i): # start of subsequence
-            if nums[j] < nums[i]: # valid 
-                dp[i] = max(dp[i], dp[j] + 1)
-                res = max(res, dp[i])
-    return res
-
-    # 2 SOLUTION: construct subsequence
-        # if cur > last of sub, append
-        # else: replace val in sub, do loop to find big one since give more space to do increase subsequence,
-        # why not pop last and insert, instead using loop: [4,10,4], avoid duplicate
-        # N^2
-        """
-        [5,1,2,7,6,3]
-         5
-           1
-           1,2
-           1,2,7
-           1,2,  6
-           1,2,    3
+class Solution:
     """
-    sub = []
-    sub.append(nums[0])
-    
-    for i in range(1, len(nums)):
-        if nums[i] > sub[-1]:
-            sub.append(nums[i])
-        else:
-            j = 0
-            # search bigger than cur
-            while sub[j] < nums[i]: 
-                j += 1
-            # find bigger than cur
-            sub[j] = nums[i]
-    return len(sub)
+    Question: return length of longest strictly increasing subsequence 
+    """
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        """
+        1SOLUTION: bottom-up DP + Two pointer
+        TIME: O(n^2), SPACE: DP O(n)
+        IDEA: two nested loop, outerloop using right pointer to track, 
+        innerloop check subsequence starting from 0 and end with right pointer
+        eg.[2,5,7]
+        dp right=0, [1,1,1]=>right=1, [1,2] => right=2, [1,2,3]
+        """
+        # create n size, default is 1 which means length=1 (one num)
+        dp = [1] * len(nums)
+        res = 1
 
-    # 3 SOLUTION: binary search based on solution2 construct subsequence
-    sub = []
-    sub.append(nums[0])
-    def binary(target):
-        # find pos to replace by target
-        # pos is first pos that larger/equal to target
-        low, high = 0, len(sub) - 1
-        while low < high:
-            mid = (low + high) // 2
-            if sub[mid] < target:
-                low = mid + 1
+        # two nested loop, update dp[i] present length of longest seq end at i
+        for right in range(len(nums)):
+            for left in range(0, right+1, 1):
+                if nums[left] < nums[right]:
+                    # it is part of valid seq
+                    dp[right] = max(dp[right], dp[left] + 1)
+                res = max(res, dp[right])
+        return res
+
+        """
+        2SOLUTION:Binary search (HARD)
+        TIME:O(nlogn)
+        eg.[0,1,0,3,2,3]
+        seq=[0,1], 0 replace with 0 => [0,1,3]=> [0,1,2] replace 3 with 2 => [0,1,2,3]
+        """
+        # store smallest possible for strictly increasing sequence
+        seq = []
+        seq.append(nums[0])
+
+        def _binary(target):
+            # find pos to replace by target, pos is first index in `seq` where `seq[pos] >= target`
+            low, hi = 0, len(seq)-1
+            while low < hi:
+                mid = (low+hi)//2
+                if seq[mid]<target:
+                    low = mid+ 1
+                else:
+                    hi = mid
+            return low
+
+        for i in range(1, len(nums)):
+            if nums[i] > seq[-1]:
+                seq.append(nums[i])
             else:
-                high = mid
-        return low
+                # find the pos replace target since smaller value allow more room to become longest seq
+                pos = _binary(nums[i])
+                seq[pos] = nums[i]
+        return len(seq)
 
-    for i in range(1, len(nums)):
-        if nums[i] > sub[-1]:
-            sub.append(nums[i])
-        else:
-            # through sorted sub array to binary search 
-            # find first element in sub that is greater or equal to cur
-            # why first larger since more room to build increasing consequence
-            pos = binary(nums[i])
-            sub[pos] = nums[i]
-    return len(sub)
-
-
+        

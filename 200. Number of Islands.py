@@ -1,26 +1,35 @@
 class Solution:
+    """
+    Question:return number of island(1's which surrounded by 0's)
+    visited become 0 avoid recalculate
+    modify grid value 1 to 0
+    """
     def numIslands(self, grid: List[List[str]]) -> int:
-        def valid(i, j):
-            return 0 <= i < len(grid) and 0 <= j < len(grid[0]) and grid[i][j] == "1"
-
-        def dfs(i, j):
-            dir = [[1,0], [-1, 0], [0, 1], [0, -1]]
-            # base case
-            if not valid(i, j):
-                return
-            # visited
-            grid[i][j] = "0"
-            for x, y in dir:
-                newX = i + x
-                newY = j + y
-                dfs(newX, newY)
-
-        # dfs
-        m,n = len(grid),len(grid[0])
+        """
+        SOLUTION1: DFS
+        """
         res = 0
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == "1":
-                    dfs(i, j) # work inside single one island
+        dire = [[1,0],[-1,0],[0,1],[0,-1]] # left, right, up, down
+
+        def valid(i,j):
+            return 0<=i<len(grid) and 0<=j<len(grid[0]) and grid[i][j]=="1"
+
+        def dfs(i, j): # no return value
+            # base case
+            if not valid(i,j):
+                return
+            grid[i][j] = "0"
+
+            # recursive case
+            for x, y in dire:
+                newX = x+i
+                newY = y+j
+                if valid(newX, newY): 
+                    dfs(newX, newY)
+
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == "1": # find edge of island
+                    dfs(i, j)
                     res += 1
         return res
