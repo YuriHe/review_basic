@@ -9,6 +9,7 @@ class Solution:
         """
         res = []
         for s in strs:
+            # if num length 4, will fill with 4 length and right align, if left-align f"{len(s):<4}" + s
             res.append(f"{len(s):4}" + s) # jie. _ _ _3jie
         return ''.join(res)
 

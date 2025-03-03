@@ -26,6 +26,7 @@ class LRUCache:
                 pop = self.order.pop(0)
                 # remove from cache
                 self.cache.pop(pop)
+                # or del self.cache[pop]
             
         self.order.append(key)
         self.cache[key] = value
