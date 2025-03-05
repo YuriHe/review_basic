@@ -21,6 +21,7 @@ class Solution:
         # create hashmap store mapping of old node to new node
         old_to_new = {}
         # first pass create new node with val and store mapping
+        # create new Node alone
         cur = head
         while cur:
             new_node = Node(cur.val)
