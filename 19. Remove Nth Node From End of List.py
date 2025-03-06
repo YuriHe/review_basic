@@ -43,15 +43,23 @@ class Solution:
         """
         if not head: return None
 
-        dummy = ListNode(0, head)
+        # Delete last nth node
+        dummy = ListNode(-1)
+        dummy.next = head
         fast = dummy
         slow = dummy
-        # fast walk n+1 step
-        for _ in range(n+1):
+
+        for _ in range(n):
+            # if n greater than length of list, no node to be removed
+            if not fast.next:
+                return head 
             fast = fast.next
-        # slow and fast walk same time
-        while fast:
+
+        # move both fast and slow until fast reaches the end
+        while fast.next: # not fast because handle n = len
             fast = fast.next
             slow = slow.next
+        
+        # move nth node from end
         slow.next = slow.next.next
         return dummy.next

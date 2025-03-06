@@ -13,12 +13,12 @@ class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return root
-        # store cur node
+        # l means left subtree of root
         l = root.left
+        # r means right subtree of root
         r = root.right
-        # reassign root.[side]
+        # let root.left pointing to r
+        # let root.right pointing to l
         root.left = self.invertTree(r)
         root.right = self.invertTree(l)
-        
         return root
-

@@ -7,22 +7,25 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         low, high = 0, len(nums)-1
         while low <= high:
-            mid = (low+high) // 2
+            mid = (low+high) //2
             if nums[mid] == target:
+                # found it
                 return mid
-            # left part is sorted, low index can = mid index
+            # left part is sorted
             elif nums[low] <= nums[mid]:
-                if nums[low] <= target and target <= nums[mid]:
-                    # shrink rage
+                # rotated
+                if nums[low] <= target <= nums[mid]:
                     high = mid - 1
                 else:
                     low = mid + 1
-            # right part is sorted
             else:
-                if nums[mid] <= target and target <= nums[high]:
+                # right part is sorted 
+                if nums[mid] <= target <= nums[high]:
+                    # go right
                     low = mid + 1
                 else:
-                    high = mid -1
+                    high = mid - 1
+
         return -1
 
 
@@ -41,4 +44,4 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid
-        return nums[right]
+        return nums[right] # or nums[left]
