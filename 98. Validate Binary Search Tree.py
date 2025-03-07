@@ -10,8 +10,10 @@ class Solution:
     SOLUTION1: inorder traversal to generate list and compare with sort list O(nlogn) and also need to check counter
     """
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        ls = []
+        if not root: return False
 
+        # must unique , use inorder traversal save order of node's val, and check if unique and sorted
+        ls = []
         def inorder(node):
             if not node:
                 return
@@ -20,15 +22,30 @@ class Solution:
             inorder(node.right)
         
         inorder(root)
+
+        return len(ls) == len(set(ls)) and ls == sorted(ls)
+    
+        """
+        SOLUTION2: BFS
+        (-inf, leftV, curV). (curV, rightV, inf)
+        TIME SPACE O(h) O(n)
+        """
+        if not root: return False
+        q = deque([(root, float('-inf'), float('inf'))])
         
-        ctn_map = collections.Counter(ls)
-        if all (v == 1 for v in ctn_map.values()) and ls == sorted(ls):
-            return True
-        else:
-            return False
+        while q:
+            node, leftBound, rightBound = q.popleft()
+            if not (leftBound < node.val < rightBound):
+                return False
+            if node.left:
+                q.append((node.left, leftBound, node.val))
+            if node.right:
+                q.append((node.right, node.val, rightBound))
+        return True
+
 
     """
-    SOLUTION2: use dfs recursion
+    SOLUTION3: use dfs recursion
     """
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         prev = float('-inf')
@@ -55,7 +72,7 @@ class Solution:
         return dfs(root)
 
     """
-    SOLUTION3: use iterative function by using stack  (BEST)
+    SOLUTION4: use iterative function by using stack  (hard to think)
     """
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
             # create stack list store node
