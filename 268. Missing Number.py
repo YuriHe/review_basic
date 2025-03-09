@@ -13,13 +13,13 @@ class Solution:
             start += 1
         return -1
 
-        # 2SOLUTION:XOR
-        # """
-        # b^b=0
-        # a^0=a
-        # apply XOR operatioon to both index and value.
-        # index=val
-        # """
+        # 2SOLUTION:XOR (best)
+        """
+        b^b=0
+        a^0=a
+        apply XOR operatioon to both index and value.
+        index=val
+        """
         res=len(nums)
         for i in range(len(nums)):
             res ^= i ^ nums[i]
@@ -30,5 +30,9 @@ class Solution:
         curSum = sum(nums)
         return total - curSum
 
-
+        # 4SOLUTION: Brute force, T: O(n^2) S: O(1)
+        for i in range(len(nums)+1):
+            if i not in nums:
+                return i
+        return -1
             

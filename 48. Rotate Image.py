@@ -41,16 +41,20 @@ class Solution:
 class Solution:
     """
     Question 90degree rotate matrix use clockwise direction
-    Pattern: swap diagnal value and reverse row by row 
+    Pattern: swap diagnal value(upper part) and reverse row by row 
     """
     def rotate(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        for i in range(len(matrix)):
-            for j in range(i+1, len(matrix[0])): # start i+1, skip i=j pointing to same cell
-                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        n = len(matrix)
+        for i in range(n):
+            for j in range(i, n): # start i+1, skip i=j pointing to same cell
+                if i != j:
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
         
         for row in matrix:
             row.reverse()
+        
+
         
