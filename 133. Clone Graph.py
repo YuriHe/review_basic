@@ -9,27 +9,28 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
+        """
+        SOLUTION1: BFS
+        TIME: O(V+E)
+        SPACE: O(V)
+        """
         if not node: return None
 
-        # store cur_node: new_node (same v) memorization
-        cloned_node = {}
+        q = deque([node])
+        # mapping old to newnode
+        clone = {node: Node(val=node.val, neighbors=[])}
 
-        def clone(cur):
-            # check if already clone node
-            if cur in cloned_node:
-                return cloned_node[cur]
+        while q:
+            cur = q.popleft()
+            for nei in cur.neighbors:
+                if nei not in clone:
+                    # create map
+                    clone[nei] = Node(val=nei.val,  neighbors=[])
+                    # q only store univisted node
+                    q.append(nei)
+                clone[nei].neighbors.append(clone[cur])
+        return clone[node]
 
-            # set new Node with val
-            new_node = Node(cur.val)
-            cloned_node[cur] = new_node
-            # set new Node with neighbors
-            for n in cur.neighbors:
-                # keep dfs, also add neighbor for new node
-                new_node.neighbors.append(clone(n))
-            # in the end return new node
-            return new_node
-
-        return clone(node)
 
         
 

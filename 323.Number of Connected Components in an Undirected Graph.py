@@ -103,5 +103,34 @@ class Solution:
                     res -= union(i, j)
         return res
 
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        """
+         SOLUTION1: DFS undirected
+         TIME O(V+E)
+         iterate node [0, n)
+         visit set to track visited node
+         use dfs to find all connected and mark visted
+        """
+        adj = collections.defaultdict(list)
+        # fill out adj list
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        # push visited node to set
+        visit = set()
 
+        def dfs(cur):
+            if cur in visit: return
+            visit.add(cur)
+            for nei in adj[cur]:
+                dfs(nei)
+
+        res = 0
+        for node in range(n):
+            if node not in visit:
+                res += 1
+                # find all connected node
+                dfs(node)
+        return res
         

@@ -10,15 +10,16 @@ class Solution:
     dp[0]=0, dp[1]=1 dp[2]=1(min(dp[2], 1+dp[2-1])=2 , min(dp[2], 1+dp[2-2])=1)
     """
     def coinChange(self, coins: List[int], amount: int) -> int:
-        # define dp, assign default value amount+1 which impossible max value, size+1, skip 0
-        dp = [amount+1] * (amount+1)
-        dp[0] = 0 # no coin for 0 amount
-        # dp[remain_coin] = dp[cur_amount-cur_coin]
+        """
+        SOLUTION1: bottom top 1D DP
+        TIME: O(n*m) n is amount, m is number of coins
+        SPACE: O(n) n is amount 
+        IDEA:create dp size is amount+1, dp[0]=0 0 coin, dp[i] means minimum number of coins we need to make up to dp[i](this amount)
+        """
+        dp = [float('inf')] * (amount+1)
+        dp[0] = 0 # amount 0 no need coin
         for i in range(1, len(dp)):
-            # for current i amount, will have coins choices as beloow
             for c in coins:
-                # cur coin is less than cur amount
-                if i >= c:
-                    # get minimum coins for cur amount, keep update dp[i] when traverse all coins 
-                    dp[i] = min(dp[i], 1+dp[i-c])
-        return dp[amount] if dp[amount] != amount+1 else -1
+                if i >=c:
+                    dp[i] = min(dp[i], dp[i-c] + 1)
+        return dp[-1] if dp[-1] != float('inf') else -1
