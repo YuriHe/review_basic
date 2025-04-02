@@ -11,21 +11,21 @@ class Solution:
     This is recursion, keep dfs until basic case and return back single data to parent
     """
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        max_sum = float('-inf')
+        if not root:
+            return 0
+        
+        maxSum = float('-inf')
 
-        def helper(node):
-            nonlocal max_sum
+        def dfs(node):
+            nonlocal maxSum
             if not node:
                 return 0
-            # recursively traverse left subtree from top to bottom 
-            left = max(0, helper(node.left))
-            right = max(0, helper(node.right))
-            # update max sum from horizontal
-            max_sum = max(max_sum, left+right+node.val)
-            # from basic case sending back to already traversed node: vertically
-            return max(left,right) + node.val
+            left = max(0, dfs(node.left))
+            right = max(0, dfs(node.right))
+            maxSum = max(maxSum, left+right+node.val)
+            return max(left, right) + node.val
 
-        helper(root)
-        return max_sum
-        
+        dfs(root)
+
+        return maxSum
         
