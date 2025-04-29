@@ -1,24 +1,22 @@
-import heapq
 class KthLargest:
     """
-    Question: Kth largest element, minheap as default
+    QUESTION: kth largest -> minheap
     """
     def __init__(self, k: int, nums: List[int]):
-        # build heap list 
-        self.heap = []
         self.k = k
+        self.minheap = [] 
+        # push nums's value to heap list with fixed length k
         for n in nums:
-            heapq.heappush(self.heap, n)
-            if len(self.heap) > self.k:
-                heapq.heappop(self.heap)
+            heapq.heappush(self.minheap, n)
+            if len(self.minheap) > self.k:
+                heapq.heappop(self.minheap)
 
     def add(self, val: int) -> int:
-        heapq.heappush(self.heap, val)
-        if len(self.heap) > self.k:
-                heapq.heappop(self.heap)
-        return self.heap[0]
-        
-
+        # add then return kth largest
+        heapq.heappush(self.minheap, val)
+        if len(self.minheap) > self.k:
+                heapq.heappop(self.minheap)
+        return self.minheap[0] if len(self.minheap) > 0 else -1
 
 
 # Your KthLargest object will be instantiated and called as such:
