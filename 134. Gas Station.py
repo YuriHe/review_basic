@@ -31,15 +31,14 @@ class Solution:
                 return start
         return -1
         # 2SOLUTION: greedy
-        if sum(gas) < sum(cost): return -1
-        # start point starting from 0
-        start = 0
-        tank = 0
+        if sum(gas) < sum(cost): return -1 # impossible, otherwise can finish whole route
+        start = 0 # start index starting from 0index
+        tank = 0 # accumulate sum for gas tank 
         for i in range(len(gas)):
-            tank += gas[i] - cost[i]
+            tank += gas[i]-cost[i]
             if tank < 0:
-                # rest tank
-                tank = 0
-                # find next start point
+                # reset tank 
+                tank=0
+                # cur start not work, move one
                 start = i+1
         return start
