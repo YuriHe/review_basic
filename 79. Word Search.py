@@ -2,6 +2,7 @@ class Solution:
     """
     QUESTION:Return T/F if find whole word in 2D grid
     SOLUTION1: memorization dfs 
+    TIME: O(m*n*4^wl)
     """
     def exist(self, board: List[List[str]], word: str) -> bool:
         # set reuse variable
