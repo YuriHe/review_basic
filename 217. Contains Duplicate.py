@@ -11,4 +11,4 @@ class Solution:
         2.Solution:hashset
         Time:O(n), Space:O(n)
         """
-        return len(set(nums)) < len(nums)
+        return len(set(nums)) != len(nums)

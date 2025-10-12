@@ -8,7 +8,7 @@ def rotate(self, nums: List[int], k: int) -> None:
     Do not return anything, modify nums in-place instead.
     """
     n = len(nums)
-    k = k % n
+    k = k % n # handle k more than len
     # 1step Rotate entire list
     self._swap(nums, 0, n-1)
     # 2step Rotate first k elements
@@ -23,3 +23,13 @@ def _swap(self, ls: List[int], start: int, end: int) -> None:
         ls[start], ls[end] = ls[end], ls[start]
         start += 1
         end -= 1
+
+# If need to return new array
+nums = [1, 2, 3, 4, 5, 6, 7]
+def rotate2(nums,k):
+    # handle cass where k > len
+    k = k % len(nums)
+    nums[:] = nums[-k:] + nums[:-k]
+
+rotate2(nums, 3)
+print(nums)  

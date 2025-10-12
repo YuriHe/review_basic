@@ -36,6 +36,8 @@ class Solution:
         for i in range(1, len(prices)):
             if prices[i] > buy:
                 profit += (prices[i]-buy)
+            
+            # each time update buy since accumulate profit
             buy = prices[i]
         return profit
         
