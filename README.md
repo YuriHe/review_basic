@@ -4,6 +4,9 @@ Insertion/deleteion: O(n)
 Retrieve: O(1)
 for fixed size of data, more retrieve but less insert/delete
 
+### Set
+#### Time Complexity
+Lookup/add/remove: O(1)
 
 ### Linkedlist
 #### Complexity
